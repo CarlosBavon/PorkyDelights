@@ -1,0 +1,68 @@
+.footer {
+  background-color: #8b1a1a;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer .socials a {
+  font-size: 1.5rem;
+  color: #ffd6d6;
+  transition: color 0.3s;
+}
+
+.footer .socials a:hover {
+  color: #ffffff;
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: #ffd6d6;
+  color: #8b1a1a;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 140%; /* above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+  z-index: 1;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  bottom: 160%;
+}
+
+/* Responsive icon size */
+@media (max-width: 500px) {
+  .footer {
+    font-size: 0.85rem;
+  }
+
+  .footer .socials a {
+    font-size: 1.2rem;
+  }
+}

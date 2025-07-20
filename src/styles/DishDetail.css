@@ -1,0 +1,93 @@
+.dish-detail {
+  padding: 2rem;
+  text-align: center;
+  color: #3e1f1f;
+}
+
+.dish-detail img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.dish-detail h1 {
+  margin: 1rem 0;
+  color: #b22222;
+}
+
+.dish-detail .desc {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.dish-detail ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.dish-detail ul li {
+  margin: 0.4rem 0;
+}
+
+.order-btn {
+  background-color: #b22222;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.order-btn:hover {
+  background-color: #8b1a1a;
+}
+
+.back-btn {
+  margin-bottom: 1rem;
+  background-color: transparent;
+  color: #b22222;
+  border: 2px solid #b22222;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #b22222;
+  color: white;
+}
+
+.dish-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dish-actions .fav-btn,
+.dish-actions .cart-btn {
+  background-color: #ffdada;
+  color: #3e1f1f;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  width: 150px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dish-actions .fav-btn:hover {
+  background-color: #ffb3b3;
+}
+
+.dish-actions .cart-btn:hover {
+  background-color: #ffc966;
+}

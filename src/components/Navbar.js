@@ -15,6 +15,10 @@ const Navbar = () => {
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to="/about">About</Link></li>
       </ul>
+      <ul className="signing-links">
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/signup">SignUp</Link></li>
+      </ul>
     </nav>
   );
 };

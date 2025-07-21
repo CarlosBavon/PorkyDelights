@@ -66,7 +66,7 @@ const Menu = () => {
 
           <div className="menu-buttons">
             <button
-    className="fav-btn"
+    className="favs-btn"
     onClick={(e) => {
       e.stopPropagation(); // Prevents navigating to detail page
       addToFavorites(dish);
@@ -76,7 +76,7 @@ const Menu = () => {
     ❤️
   </button>
   <button
-    className="cart-btn"
+    className="cartt-btn"
     onClick={(e) => {
       e.stopPropagation();
       addToCart(dish);

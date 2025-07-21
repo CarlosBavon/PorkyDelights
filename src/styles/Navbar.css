@@ -47,19 +47,24 @@
   color: #ffd6d6;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    background-color: #b22222;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    display: none;
-    padding: 1rem;
-  }
+.signing-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
 
-  .navbar.expanded .nav-links {
-    display: flex;
-  }
+.signing-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  border: 2px solid #ffd6d6;
+  border-radius: 15px;
+  padding: 0.2rem 0.5rem
+}
+
+.signing-links li a:hover {
+  color: #b22222;
+  border: 2px solid #b22222;
+  background-color: #ffd6d6;
 }

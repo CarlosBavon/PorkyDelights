@@ -1,0 +1,28 @@
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #ffe6e6;
+  border-bottom: 2px solid #ffb3b3;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-left h3 {
+  margin: 0;
+  font-family: 'Comic Neue', cursive;
+  color: #cc0000;
+}
+
+.top-right a {
+  margin-left: 1.5rem;
+  color: #cc0000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.top-right a:hover {
+  color: #ff4d4d;
+}

@@ -56,6 +56,8 @@
   align-items: center;
   gap: 10px;
   margin: 8px 0;
+  text-align: center;
+  justify-content: center;
 }
 
 .qty-control button {
@@ -68,6 +70,10 @@
   font-size: 18px;
   cursor: pointer;
   transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
 }
 
 .qty-control button:hover {

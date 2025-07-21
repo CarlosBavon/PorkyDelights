@@ -3,6 +3,7 @@
   background-color: #fdf5e6;
   text-align: center;
   color: #3e1f1f;
+  min-height: 90vh;
 }
 
 .menu-page h1 {
@@ -84,8 +85,8 @@
 }
 
 
-.fav-btn,
-.cart-btn {
+.favs-btn,
+.cartt-btn {
   background-color: #ffe5e5;
   border: none;
   border-radius: 50%;
@@ -94,6 +95,10 @@
   height: 40px;
   cursor: pointer;
   transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .fav-btn:hover {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/FavoritesPage.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const FavoritesPage = () => {
   const [favorites, setFavorites] = useState([]);

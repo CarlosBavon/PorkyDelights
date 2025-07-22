@@ -1,5 +1,5 @@
 import React from "react";
-import App from "../App"; // your regular site with routes and pages
+import App from "../App";
 
 const DesktopApp = () => {
   return <App />;

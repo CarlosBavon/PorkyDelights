@@ -6,7 +6,7 @@ function TopNavBar() {
   return (
     <div className="top-nav">
       <div className="top-left">
-        <h3>🐽 Porky Delights</h3>
+        <h3>Porky Delights</h3>
       </div>
       <div className="top-right">
         <Link to="/login">Login</Link>

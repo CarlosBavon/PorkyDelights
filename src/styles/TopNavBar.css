@@ -3,26 +3,31 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #ffe6e6;
+  background: #cc0000;
   border-bottom: 2px solid #ffb3b3;
   position: sticky;
   top: 0;
+  font-size: 0.9rem;
   z-index: 1000;
 }
 
 .top-left h3 {
   margin: 0;
-  font-family: 'Comic Neue', cursive;
-  color: #cc0000;
+  color: #ffffff;
 }
 
 .top-right a {
-  margin-left: 1.5rem;
-  color: #cc0000;
+  margin-left: 0.8rem;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
+  border: 2px solid #ffffff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 15px;
+  transition: 0.2s ease-in-out
 }
 
 .top-right a:hover {
-  color: #ff4d4d;
+  background-color: #ffb3b3;
+  color: #cc0000;
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MobileApp from "./components/MobileApp";
+import MobileApp from "./mobile/MobileApp";
 import DesktopApp from "./components/DesktopApp";
 
 const AppRouter = () => {

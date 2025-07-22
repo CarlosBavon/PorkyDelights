@@ -105,7 +105,16 @@
   background-color: #ffccd5;
 }
 
-.cart-btn:hover {
-  background-color: #ffe0b3;
+h4 {
+  text-align: left;
+  font-size: 1.7rem;
+  color: #990000;
+  border-bottom: 2px solid #990000;
 }
 
+.cart-favs {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  gap: 10px;
+}

@@ -1,5 +1,5 @@
 // src/components/DishCard.js
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/DishCard.css";
 
 const DishCard = ({ title, imgSrc }) => {

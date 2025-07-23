@@ -52,8 +52,19 @@
 .menu-buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  gap: 3px;
+}
+
+.price {
+  color: #b22222;
+  margin-left: 14px;
+}
+
+.menu-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
 .cart-btn,
@@ -90,7 +101,7 @@
   background-color: #ffe5e5;
   border: none;
   border-radius: 50%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -98,6 +109,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 10px;
   
 }
 

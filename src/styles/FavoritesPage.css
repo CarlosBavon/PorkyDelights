@@ -54,6 +54,7 @@
   border-radius: 10px;
   cursor: pointer;
   margin-top: 10px;
+  margin-left: 10px;
 }
 
 .remove-btn:hover {

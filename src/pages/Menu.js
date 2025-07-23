@@ -41,51 +41,61 @@ import Sisig from '../images/sisig.jpeg'
 const freshporkcuts = [
   {
     name: "Pork Chop",
+    price: 900,
     image: PorkChops,
     description: "Juicy, grilled pork chop seasoned to perfection."
   },
   {
     name: "Pork Ribs",
+    price: 600,
     image: PorkRibs,
     description: "Tender ribs glazed in sticky BBQ sauce."
   },
   {
     name: "Pork Belly",
+    price: 750,
     image: PorkBelly,
     description: "Soft and tender pork belly, perfect for grilling."
   },
   {
     name: "Pork Tenderloin",
+    price: 1200,
     image: PorkTenderloin,
     description: "Savory tenderloin, a classic pork cut."
   },
   {
     name: "Pork Shoulder",
+    price: 700,
     image: PorkShoulder,
     description: "Flavorful pork shoulder, a hearty option."
   },
   {
     name: "Pork Loin",
+    price: 1000,
     image: PorkLoin,
     description: "Rich and flavorful pork loin, a hearty option."
   },
   {
     name: "Baby Back Ribs",
+    price: 850,
     image: BabyBackRibs,
     description: "Soft and tender baby back ribs, perfect for grilling."
   },
   {
     name: "Pork Hocks",
+    price: 450,
     image: PorkHock,
     description: "Tender pork hocks, a classic pork cut."
   },
   {
     name: "Pork Jowls",
+    price: 500,
     image: PorkJowl,
     description: "Soft and tender pork jowls, perfect for grilling."
   },
   {
     name: "Pork Trotters",
+    price: 350,
     image: PorkTrotters,
     description: "Flavorful pork trotters, a hearty option."
   },
@@ -93,52 +103,62 @@ const freshporkcuts = [
 
 const processedPork = [
   {
-    name: "Bacon",
+    name: "Bacon (per 100g)",
+    price: 300,
     image: Bacon,
     description: "Smoky bacon seasoned with a blend of spices."
   },
   {
-    name: "Ham",
+    name: "Ham (per kg)",
+    price: 1500,
     image: Ham,
     description: "Juicy, smoked ham seasoned to perfection."
   },
   {
-    name: "Prosciutto",
+    name: "Prosciutto (per 100g)",
+    price: 750,
     image: Prosciutto,
     description: "Flavorful prosciutto, a classic Italian ham."
   },
   {
-    name: "Salami",
+    name: "Salami (per 100g)",
+    price: 350,
     image: Salami,
     description: "Juicy, salami seasoned to perfection."
   },
   {
-    name: "Sausages",
+    name: "Sausages (per kg)",
+    price: 1100,
     image: Sausages,
     description: "Juicy, sausages seasoned to perfection."
   },
   {
-    name: "Smoked Ham",
+    name: "Smoked Ham (per kg)",
+    price: 1300,
     image: SmokedHam,
     description: "Juicy, smoked ham seasoned to perfection."
   },
   {
-    name: "Hot Dogs / Frankfurters",
+    name: "Hot Dogs / Frankfurters (per pack of 6)",
+    price: 450,
     image: HotDog,
     description: "Juicy, hot dogs seasoned to perfection."
   },
   {
-    name: "Bacon Bits",
+    name: "Bacon Bits (per 100g)",
+    price: 250,
     image: BaconBits,
     description: "Juicy, bacon bits seasoned to perfection."
   },
   {
-    name: "Sausage Bits",
+    name: "Sausage Bits (per 100g)",
+    price: 300,
     image: SausageBits,
     description: "Juicy, sausage bits seasoned to perfection."
   },
   {
-    name: "Pepperoni",
+    name: "Pepperoni (per 100g)",
+    price: 400,
     image: Pepperoni,
     description: "Juicy, pepperoni seasoned to perfection."
   },
@@ -147,51 +167,61 @@ const processedPork = [
 const internationalPork = [
   {
     name: "Pulled Pork",
+    price: 1200,
     image: PulledPork,
     description: "Slow-cooked, shredded pork."
   },
   {
     name: "Carnitas",
+    price: 1000,
     image: Carnitas,
     description: "Mexican braised & fried pork."
   },
   {
-    name: "Lechón",
+    name: "Lechón (whole pig)",
+    price: 22000,
     image: Lechon,
     description: "Whole roasted pig (popular in Spain/Philippines)."
   },
   {
-    name: "Char Siu",
+    name: "Char Siu (per kg)",
+    price: 1600,
     image: CharSiu,
     description: "Chinese BBQ pork, marinated & grilled."
   },
   {
     name: "Tonkatsu",
+    price: 1300,
     image: Tonkatsu,
     description: "Japanese breaded pork cutlet."
   },
   {
-    name: "Pork Dumplings",
+    name: "Pork Dumplings (per piece)",
+    price: 100,
     image: PorkDumplings,
     description: "Chinese dumplings filled with minced pork."
   },
   {
-    name: "Pork Rinds",
+    name: "Pork Rinds (per bag)",
+    price: 350,
     image: PorkRinds,
     description: "Pork rinds, fried pork skin."
   },
   {
     name: "Cassoulet",
+    price: 1500,
     image: Cassoulet,
     description: "French stew with pork, beef, and vegetables."
   },
   {
     name: "Feijoada",
+    price: 1200,
     image: Feijoada,
     description: "Brazilian stew with pork, beans, and vegetables."
   },
   {
     name: "Sisig",
+    price: 900,
     image: Sisig,
     description: "Filipino stew with pork, vegetables, and spices."
   }
@@ -227,7 +257,7 @@ const Menu = () => {
 
       <h1>Our Porky Menu</h1>
 
-      <h4>Fresh Pork Cuts & Products:</h4>
+      <h4>Fresh Pork Cuts & Products (Per Kg):</h4>
       <div className="menu-grid">
         {freshporkcuts.map((dish, index) => (
         <div className="menu-card" key={index} onClick={() => handleClick(dish)}>
@@ -235,28 +265,32 @@ const Menu = () => {
           <h2>{dish.name}</h2>
           <p>{dish.description}</p>
 
-          <div className="menu-buttons">
-            <button
-              className="favs-btn"
-              onClick={(e) => {
-                e.stopPropagation(); // Prevents navigating to detail page
-                addToFavorites(dish);
-                showToast(`${dish.name} Added to Favorites ❤️`);
-              }}
-            >
-              ❤️
-            </button>
-            <button
-              className="cartt-btn"
-              onClick={(e) => {
-                e.stopPropagation();
-                addToCart(dish);
-                showToast(`${dish.name} Added to Cart 🛒`)    
-              }}
-            >
-              🛒
-            </button>
+          <div className="menu-price">
+            <p className="price">KES {dish.price}</p>
+            <div className="menu-buttons">
+              <button
+                className="favs-btn"
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevents navigating to detail page
+                  addToFavorites(dish);
+                  showToast(`${dish.name} Added to Favorites ❤️`);
+                }}
+              >
+                ❤️
+              </button>
+              <button
+                className="cartt-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  addToCart(dish);
+                  showToast(`${dish.name} Added to Cart 🛒`)    
+                }}
+              >
+                🛒
+              </button>
+            </div>
           </div>
+
         </div>
       ))}
       </div>
@@ -269,33 +303,37 @@ const Menu = () => {
           <h2>{dish.name}</h2>
           <p>{dish.description}</p>
 
-          <div className="menu-buttons">
-            <button
-              className="favs-btn"
-              onClick={(e) => {
-                e.stopPropagation(); // Prevents navigating to detail page
-                addToFavorites(dish);
-                showToast(`${dish.name} Added to Favorites ❤️`);
-              }}
-            >
-              ❤️
-            </button>
-            <button
-              className="cartt-btn"
-              onClick={(e) => {
-                e.stopPropagation();
-                addToCart(dish);
-                showToast(`${dish.name} Added to Cart 🛒`)    
-              }}
-            >
-              🛒
-            </button>
+          <div className="menu-price">
+            <p className="price">KES {dish.price}</p>
+            <div className="menu-buttons">
+              <button
+                className="favs-btn"
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevents navigating to detail page
+                  addToFavorites(dish);
+                  showToast(`${dish.name} Added to Favorites ❤️`);
+                }}
+              >
+                ❤️
+              </button>
+              <button
+                className="cartt-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  addToCart(dish);
+                  showToast(`${dish.name} Added to Cart 🛒`)    
+                }}
+              >
+                🛒
+              </button>
+            </div>
           </div>
+
         </div>
       ))}
       </div>
 
-      <h4>International Pork Dishes:</h4>
+      <h4>International Pork Dishes (Per Serving):</h4>
       <div className="menu-grid">
         {internationalPork.map((dish, index) => (
         <div className="menu-card" key={index} onClick={() => handleClick(dish)}>
@@ -303,28 +341,32 @@ const Menu = () => {
           <h2>{dish.name}</h2>
           <p>{dish.description}</p>
 
-          <div className="menu-buttons">
-            <button
-              className="favs-btn"
-              onClick={(e) => {
-                e.stopPropagation(); // Prevents navigating to detail page
-                addToFavorites(dish);
-                showToast(`${dish.name} Added to Favorites ❤️`);
-              }}
-            >
-              ❤️
-            </button>
-            <button
-              className="cartt-btn"
-              onClick={(e) => {
-                e.stopPropagation();
-                addToCart(dish);
-                showToast(`${dish.name} Added to Cart 🛒`)    
-              }}
-            >
-              🛒
-            </button>
+          <div className="menu-price">
+            <p className="price">KES {dish.price}</p>
+            <div className="menu-buttons">
+              <button
+                className="favs-btn"
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevents navigating to detail page
+                  addToFavorites(dish);
+                  showToast(`${dish.name} Added to Favorites ❤️`);
+                }}
+              >
+                ❤️
+              </button>
+              <button
+                className="cartt-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  addToCart(dish);
+                  showToast(`${dish.name} Added to Cart 🛒`)    
+                }}
+              >
+                🛒
+              </button>
+            </div>
           </div>
+          
         </div>
       ))}
       </div>

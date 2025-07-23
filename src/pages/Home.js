@@ -25,22 +25,22 @@ const Home = () => {
         <h2>Our Favorites</h2>
         <div className="dishes">
             <DishCard
-                name="Spicy Pork Ribs"
-                description="Tender ribs marinated in a spicy blend of herbs and spices."
+                title="Spicy Pork Ribs"
+                description="Tender ribs marinated with sause."
                 price="$15.99"
-                imageUrl={PorkRibs}
+                imgSrc={PorkRibs}
             />
             <DishCard
-                name="Crispy Pork Belly"
-                description="Crispy on the outside, juicy on the inside, served with a tangy sauce."
+                title="Crispy Pork Belly"
+                description="Served with a tangy sauce."
                 price="$12.99"
-                imageUrl={PorkBelly}
+                imgSrc={PorkBelly}
             />
             <DishCard
-                name="Pork Chops"
-                description="Juicy, grilled pork chop seasoned to perfection."
+                title="Pork Chops"
+                description="Seasoned to great perfection."
                 price="$10.99"
-                imageUrl={PorkChops}
+                imgSrc={PorkChops}
             />
         </div>
       </section>

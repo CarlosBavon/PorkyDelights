@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "../styles/DishCard.css";
 
-const DishCard = ({ title, imgSrc }) => {
+const DishCard = ({ title, imgSrc, description, price }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -15,6 +15,10 @@ const DishCard = ({ title, imgSrc }) => {
         onLoad={() => setLoaded(true)}
       />
       <h3>{title}</h3>
+      <div>
+        <p>{description}</p>
+        <h5>{price}</h5>
+      </div>
     </div>
   );
 };

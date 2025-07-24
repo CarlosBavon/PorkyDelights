@@ -81,7 +81,7 @@
   border-radius: 30px;
   font-size: 1rem;
   font-weight: bold;
-  cursor: pointer;
+  cursor: url(../pointer.png), pointer;
   box-shadow: 0 5px 15px rgba(204, 0, 0, 0.3);
   transition: all 0.3s ease;
   margin: 20px auto;
@@ -104,7 +104,7 @@
   font-size: 1rem;
   width: 40px;
   height: 40px;
-  cursor: pointer;
+  cursor: url(../pointer.png), pointer;
   transition: background 0.3s;
   display: flex;
   align-items: center;

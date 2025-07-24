@@ -31,6 +31,7 @@
   border: 1px solid #ddd;
   border-radius: 12px;
   outline: none;
+  cursor: url(../typing.png), pointer;
 }
 
 .contact-form button {
@@ -40,7 +41,7 @@
   padding: 14px;
   font-size: 1.1rem;
   border-radius: 12px;
-  cursor: pointer;
+  cursor: url(../pointer.png), pointer;
 }
 
 .contact-form button:hover {
@@ -64,6 +65,7 @@
   font-weight: bold;
   transition: all 0.3s ease;
   border: 1px solid #ffcccc;
+  cursor: url(../pointer.png), pointer;
 }
 
 .contact-options a:hover {

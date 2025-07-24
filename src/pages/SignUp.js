@@ -13,7 +13,7 @@ const SignUp = () => {
         <input type="password" placeholder="Confirm password" required />
         <button type="submit">Sign Up</button>
         <p>
-          Already have an account? <Link to="/login">Login</Link>
+          Already have an account? <Link to="/login" className="signing-link">Login</Link>
         </p>
       </form>
     </div>

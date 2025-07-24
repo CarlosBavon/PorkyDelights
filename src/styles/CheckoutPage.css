@@ -67,3 +67,13 @@
   text-align: center;
   color: #444;
 }
+
+.go-to-menu {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #cc0000;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer
+}

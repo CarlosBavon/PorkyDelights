@@ -32,6 +32,7 @@
   width: 100%;
   max-width: 300px;
   font-size: 1rem;
+  cursor: url(../typing.png), pointer;
 }
 
 .newsletter button {
@@ -41,7 +42,7 @@
   padding: 10px 20px;
   border-radius: 12px;
   font-size: 1rem;
-  cursor: pointer;
+  cursor: url(../pointer.png), pointer;
   transition: background 0.3s ease;
 }
 

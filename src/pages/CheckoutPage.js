@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/CheckoutPage.css";
 
 const CheckoutPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState("Mpesa");
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -19,7 +22,7 @@ const CheckoutPage = () => {
   );
 
   const handleOrder = () => {
-    if (!name || !phone || !address) {
+    if (!name || !phone || !address || !email) {
       alert("Please fill out all fields");
       return;
     }
@@ -37,6 +40,9 @@ const CheckoutPage = () => {
         <div className="thank-you">
           <h2>🎉 Thank you, {name}!</h2>
           <p>Your order has been placed successfully.</p>
+          <Link to="/menu">
+            <button className="go-to-menu">Back to Menu</button>
+          </Link>
         </div>
       ) : (
         <>
@@ -65,6 +71,13 @@ const CheckoutPage = () => {
               placeholder="Phone Number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <textarea

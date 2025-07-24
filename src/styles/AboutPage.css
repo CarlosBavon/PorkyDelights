@@ -94,6 +94,7 @@
   border-radius: 12px;
   text-decoration: none;
   font-weight: bold;
+  cursor: url(../pointer.png), pointer;
 }
 
 .about-cta a:hover {

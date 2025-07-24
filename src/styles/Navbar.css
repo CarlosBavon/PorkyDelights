@@ -28,6 +28,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   font-family: 'Poppins', sans-serif;
+  cursor: url(../pointer.png), pointer;
 }
 
 .nav-links {
@@ -41,6 +42,7 @@
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
+  cursor: url(../pointer.png), pointer;
 }
 
 .nav-links li a:hover {
@@ -60,7 +62,8 @@
   transition: color 0.2s;
   border: 2px solid #ffd6d6;
   border-radius: 15px;
-  padding: 0.2rem 0.5rem
+  padding: 0.2rem 0.5rem;
+  cursor: url(../pointer.png), pointer;
 }
 
 .signing-links li a:hover {

@@ -25,6 +25,7 @@
   border-radius: 12px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  cursor: url(../typing.png), pointer;
 }
 
 .auth-container button {
@@ -34,7 +35,7 @@
   padding: 12px;
   border-radius: 12px;
   font-size: 1rem;
-  cursor: pointer;
+  cursor: url(../pointer.png), pointer;
   transition: background 0.3s ease;
 }
 
@@ -45,4 +46,7 @@
 .auth-container p {
   margin-top: 15px;
   font-size: 0.9rem;
+}
+.signing-link {
+  cursor: url(../pointer.png), pointer;
 }

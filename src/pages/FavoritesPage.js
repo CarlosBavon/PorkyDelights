@@ -18,9 +18,9 @@ const FavoritesPage = () => {
 
   const navigate = useNavigate();
 
-const goBack = () => {
-  navigate(-1); // Goes back to the previous page
-};
+  const goBack = () => {
+    navigate(-1); // Goes back to the previous page
+  };
 
 
   return (

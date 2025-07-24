@@ -40,6 +40,7 @@
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  cursor: url(../typing.png), pointer;
 }
 
 .checkout-form textarea {
@@ -55,12 +56,40 @@
   border-radius: 25px;
   font-size: 1rem;
   width: 100%;
-  cursor: pointer;
+  cursor: url(../pointer.png), pointer;
   margin-top: 15px;
 }
 
 .place-order-btn:hover {
   background-color: #a00000;
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.payment-option {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.payment-option input {
+  cursor: url(../pointer.png), pointer;
+}
+.payment-option p {
+  width: 80%;
+}
+
+.back-to-cart {
+  background-color: #fff8f0;
+  border: 2px solid #cc0000;
+  border-radius: 25px;
+  padding: 5px 10px;
+  text-decoration: none;
+  cursor: url(../pointer.png), pointer;
+  color: #cc0000;
 }
 
 .thank-you {

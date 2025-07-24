@@ -7,9 +7,12 @@ const CheckoutPage = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
+  const [county, setCounty] = useState("")
+  const [town, setTown] = useState("")
+  const [street, setStreet] = useState("")
+  const [house, setHouse] = useState("")
   const [orderPlaced, setOrderPlaced] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState("Mpesa");
+  const [payment, setPayment] = useState("");
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -22,7 +25,7 @@ const CheckoutPage = () => {
   );
 
   const handleOrder = () => {
-    if (!name || !phone || !address || !email) {
+    if (!name || !phone || !email) {
       alert("Please fill out all fields");
       return;
     }
@@ -34,7 +37,13 @@ const CheckoutPage = () => {
 
   return (
     <div className="checkout-container">
-      <h1>Checkout 🧾</h1>
+      <div>
+        <Link to="/cart" className="back-to-cart">
+          Back to Cart
+        </Link>
+        <h1>Checkout 🧾</h1>
+      </div>
+      
 
       {orderPlaced ? (
         <div className="thank-you">
@@ -80,12 +89,78 @@ const CheckoutPage = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <textarea
-              placeholder="Delivery Address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-            ></textarea>
+            <h3>🚚 Delivery Address</h3>
+            <input 
+              name="county" 
+              placeholder="County" 
+              value={county}
+              onChange={(e) => setCounty(e.target.value)} 
+            />
+
+            <input 
+              name="town" 
+              placeholder="Town" 
+              value={town}
+              onChange={(e) => setTown(e.target.value)} 
+            />
+
+            <input 
+              name="street" 
+              value={street}
+              placeholder="Street / Estate" 
+              onChange={(e) => setStreet(e.target.value)} 
+            />
+
+            <input 
+              name="house" 
+              placeholder="House Number / Apartment" 
+              value={house}
+              onChange={(e) => setHouse(e.target.value)} 
+            />
+
+
+            <h3>💳 Payment Method</h3>
+            <div className="payment-options">
+              <div className="payment-option">
+                <p>Mpesa</p>
+                <input
+                  type="radio"
+                  name={payment}
+                  value="Mpesa"
+                  onChange={(e) => setPayment(e.target.value)}
+                />
+              </div>
+              <div className="payment-option">
+                <p>Credit/Debit Card</p>
+                <input
+                  type="radio"
+                  name={payment}
+                  value="Card"
+                  onChange={(e) => setPayment(e.target.value)}
+                />
+              </div>
+              <div className="payment-option">
+                <p>PayPal</p>
+                <input
+                  type="radio"
+                  name={payment}
+                  value="PayPal"
+                  onChange={(e) => setPayment(e.target.value)}
+                />
+              </div>
+              <div className="payment-option">
+                <p>Cash on Delivery</p>
+                <input
+                  className="cash-on-delivery"
+                  type="radio"
+                  name={payment}
+                  value="Cash"
+                  onChange={(e) => setPayment(e.target.value)}
+                />
+              </div>
+            </div>
+            
+            
             <button className="place-order-btn" onClick={handleOrder}>
               ✅ Place Order
             </button>

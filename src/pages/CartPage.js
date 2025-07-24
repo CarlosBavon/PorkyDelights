@@ -1,7 +1,7 @@
 // src/pages/CartPage.js
 import React, { useEffect, useState } from "react";
 import { getCart } from "../utils/storageUtils";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../styles/CartPage.css";
 
 function CartPage() {
@@ -25,10 +25,6 @@ const decreaseQty = (index) => {
 
 const navigate = useNavigate();
 
-const goBack = () => {
-  navigate(-1); // Goes back to the previous page
-};
-
 
   const [cartItems, setCartItems] = useState([]);
 
@@ -48,7 +44,7 @@ const goBack = () => {
 
   return (
     <div className="cart-container">
-      <button className="back-btn" onClick={goBack}>⬅ Back to Menu</button>
+      <Link to="/menu" className="back-btn">⬅ Back to Menu</Link>
         <h1>🛒 Your Porky Cart</h1>
         {cartItems.length > 0 && (
             <button className="clear-cart-btn" onClick={clearCart}>

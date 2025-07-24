@@ -68,7 +68,7 @@
   width: 30px;
   height: 30px;
   font-size: 18px;
-  cursor: pointer;
+  cursor: url(../pointer.png), pointer;
   transition: 0.2s;
   display: flex;
   align-items: center;
@@ -95,7 +95,7 @@
   font-weight: bold;
   margin: 0 auto 20px;
   display: block;
-  cursor: pointer;
+  cursor: url(../pointer.png), pointer;
   box-shadow: 0 5px 10px rgba(255, 77, 77, 0.3);
   transition: background 0.3s ease;
 }
@@ -112,7 +112,7 @@
   border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 600;
-  cursor: pointer;
+  cursor: url(../pointer.png), pointer;
   margin-top: 20px;
   display: block;
   width: 90%;
@@ -129,6 +129,7 @@
 .proceed-checkout-btn a {
   text-decoration: none;
   color: #fff;
+  cursor: url(../pointer.png), pointer;
 }
 
 .proceed-checkout-btn:hover {
@@ -146,10 +147,9 @@
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+  cursor: url(../pointer.png), pointer;
   gap: 5px;
+  text-decoration: none;
 }
 
 .back-btn:hover {

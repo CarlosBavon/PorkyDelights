@@ -104,5 +104,5 @@
   background-color: #cc0000;
   color: white;
   font-size: 0.9rem;
-  cursor: pointer
+  cursor: url(../pointer.png), pointer;
 }

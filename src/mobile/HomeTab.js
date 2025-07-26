@@ -38,6 +38,10 @@ const HomeTab = () => {
     <div className="home-tab">
       {/* Hero Section */}
       <section className="hero-tab">
+        <div className="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Porky Search" />
+        </div>
         <div className="overlay-tab">
           <div className="overlay-icons"
             ref={menuRef}

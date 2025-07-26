@@ -1,6 +1,7 @@
 .home-tab {
   font-family: 'Poppins', sans-serif;
   color: #333;
+  overflow-x: hidden;
 }
 
 /* Hero */
@@ -9,11 +10,37 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 75vh;
+  height: 85vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.search-icon {
+  position: fixed;
+  top: 0;
+  padding: 20px;
+  z-index: 1;
+}
+.search-icon i {
+  position: absolute;
+  z-index: 2;
+  color: wheat;
+  font-size: 1.5rem;
+  top: 30px;
+  left: 30px;
+}
+.search-icon input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.25);
+  border: 3px solid wheat;
+  color: wheat;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .overlay-tab {

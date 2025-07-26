@@ -10,16 +10,13 @@ const BottomNavBar = () => {
   return (
     <div className="bottom-nav">
       <Link to="/" className="nav-item">
-        <AiFillHome size={24} />
+        <AiFillHome size={34} />
       </Link>
       <Link to="/menu" className="nav-item">
-        <MdRestaurantMenu size={24} />
+        <MdRestaurantMenu size={34} />
       </Link>
       <Link to="/contact" className="nav-item">
-        <IoIosCall size={24} />
-      </Link>
-      <Link to="/about" className="nav-item">
-        <FaRegQuestionCircle size={24} />
+        <IoIosCall size={34} />
       </Link>
     </div>
   );

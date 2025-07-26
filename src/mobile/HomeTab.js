@@ -1,42 +1,59 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "../mobileStyles/HomeTab.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import PorkChop from '../images/pork-chops.jpeg'
+import PorkRibs from '../images/pork-ribs.jpeg'
+import Sausage from '../images/sausages.jpeg'
 
-const porkItems = [
-  { name: "Pork Ribs", img: "/images/ribs.jpg" },
-  { name: "Pork Sausage", img: "/images/sausage.jpg" },
-  { name: "Pork Chop", img: "/images/chop.jpg" },
-];
 
 const HomeTab = () => {
+
+  const menuRef = useRef(null);
+  const [rotation, setRotation] = useState(0);
+  const angleRef = useRef(0);
+
+  const getAngle = (x, y) => {
+    const rect = menuRef.current.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    return Math.atan2(y - cy, x - cx) * (180 / Math.PI);
+  };
+
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    angleRef.current = getAngle(touch.clientX, touch.clientY);
+  };
+
+  const handleTouchMove = (e) => {
+    const touch = e.touches[0];
+    const newAngle = getAngle(touch.clientX, touch.clientY);
+    const delta = newAngle - angleRef.current;
+    setRotation((prev) => prev + delta);
+    angleRef.current = newAngle;
+  };
+
+
   return (
     <div className="home-tab">
       {/* Hero Section */}
-      <section className="hero">
-        <div className="overlay">
-          <motion.h1
-            initial={{ opacity: 0, y: -40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Porky Delights
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            Experience the Juiciest Cuts of Perfection
-          </motion.p>
-          <Link to="/menu">
-            <button className="cta-btn">Explore Menu</button>
-          </Link> 
+      <section className="hero-tab">
+        <div className="overlay-tab">
+          <div className="overlay-icons"
+            ref={menuRef}
+            style={{ transform: `rotate(${rotation}deg)` }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}>
+            <div className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-bowl-food"></i><p>Pork</p></div>
+            <div className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-bacon"></i><p>Bacon</p></div>
+            <div className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-burger"></i><p>Desserts</p></div>
+            <div className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-utensils"></i><p>Menu</p></div>
+          </div>
         </div>
       </section>
 
       {/* Welcome Section */}
-      <motion.section 
+      <motion.section
         className="welcome"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -50,7 +67,7 @@ const HomeTab = () => {
       </motion.section>
 
       {/* Featured Items */}
-      <motion.section 
+      <motion.section
         className="features"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -60,12 +77,12 @@ const HomeTab = () => {
         <h3>Our Specials</h3>
         <div className="cards">
           {[
-            { img: '/images/pork-chop.jpg', title: 'Grilled Pork Chop', desc: 'Smoky, juicy and full of flavor!' },
-            { img: '/images/pork-ribs.jpg', title: 'BBQ Pork Ribs', desc: 'Slow-cooked and dripping in sauce.' },
-            { img: '/images/sausage.jpg', title: 'Spicy Pork Sausage', desc: 'Perfectly seasoned & grilled.' },
+            { img: PorkChop, title: 'Grilled Pork Chop', desc: 'Smoky, juicy and full of flavor!' },
+            { img: PorkRibs, title: 'BBQ Pork Ribs', desc: 'Slow-cooked and dripping in sauce.' },
+            { img: Sausage, title: 'Spicy Pork Sausage', desc: 'Perfectly seasoned & grilled.' },
           ].map((item, i) => (
-            <motion.div 
-              key={i} 
+            <motion.div
+              key={i}
               className="card"
               whileHover={{ scale: 1.05 }}
               initial={{ opacity: 0, y: 40 }}

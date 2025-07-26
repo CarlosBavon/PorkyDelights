@@ -39,7 +39,10 @@ const DishDetail = () => {
         <li>🍴 Perfectly seasoned</li>
         <li>💯 Porky satisfaction guaranteed</li>
       </ul>
-      <button className="order-btn" onClick={() => navigate("/menu")}>Order Now</button>
+      <button className="order-btn" onClick={() => {
+        addToCart(dish);
+        showToast(`${dish.name} added to Cart 🛒`)
+      }}>Order Now</button>
       <div className="dish-actions">
         <button className="fav-btn" onClick={() => {
           addToFavorites(dish);

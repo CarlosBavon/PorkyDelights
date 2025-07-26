@@ -9,6 +9,7 @@
 .menu-page h1 {
   margin-bottom: 2rem;
   color: #b22222;
+  font-size: 1.5rem;
 }
 
 .menu-grid {
@@ -20,7 +21,7 @@
 
 .menu-card {
   background: #fff0f0;
-  width: 250px;
+  width: 200px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
@@ -42,11 +43,12 @@
 .menu-card h2 {
   margin: 0.5rem 0 0;
   color: #b22222;
+  font-size: 1.2rem;
 }
 
 .menu-card p {
   padding: 0 1rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .menu-buttons {
@@ -58,6 +60,7 @@
 .price {
   color: #b22222;
   margin-left: 14px;
+  font-style: italic;
 }
 
 .menu-price {
@@ -70,6 +73,7 @@
 .cart-btn,
 .favorites-btn {
   text-decoration: none;
+  cursor: url(../pointer.png), pointer;
 }
 
 .view-cart-btn,
@@ -79,7 +83,7 @@
   padding: 12px 24px;
   border: none;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   cursor: url(../pointer.png), pointer;
   box-shadow: 0 5px 15px rgba(204, 0, 0, 0.3);
@@ -101,9 +105,9 @@
   background-color: #ffe5e5;
   border: none;
   border-radius: 50%;
-  font-size: 1rem;
-  width: 40px;
-  height: 40px;
+  font-size: 0.9rem;
+  width: 30px;
+  height: 30px;
   cursor: url(../pointer.png), pointer;
   transition: background 0.3s;
   display: flex;
@@ -119,7 +123,7 @@
 
 h4 {
   text-align: left;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   color: #990000;
   border-bottom: 2px solid #990000;
 }

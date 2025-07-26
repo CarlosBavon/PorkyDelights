@@ -2,6 +2,7 @@
   padding: 1.5rem;
   background: #fff8f1;
   min-height: 100vh;
+  margin-bottom: 70px;
 }
 
 .menu-header {
@@ -98,16 +99,16 @@
 }
 
 .menu-name {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: bold;
   color: #aa2e25;
   margin: 0.75rem 1rem 0;
 }
 
-.menu-description {
-  font-size: 0.8rem;
+.menutab-description {
   color: #555;
-  margin: 0.5rem 1rem 1rem;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .menu-bottom {
@@ -118,7 +119,7 @@
 }
 
 .menu-price {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: 600;
   color: #444;
 }
@@ -130,7 +131,7 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   transition: background 0.2s;
 }
 

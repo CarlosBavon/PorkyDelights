@@ -37,25 +37,25 @@ const porkItems = [
 ];
 
 const Menu = () => {
-    const { addToCart } = useCart();
-    const [showPopup, setShowPopup] = useState(false);
+  const { addToCart } = useCart();
+  const [showPopup, setShowPopup] = useState(false);
 
-    const handleAddToCart = (item) => {
-      addToCart(item);
-      setShowPopup(true);
-      setTimeout(() => setShowPopup(false), 2000); // hide after 2 seconds
-    };
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 2000); // hide after 2 seconds
+  };
 
   return (
     <div className="menu-container">
-        <div className="menu-header">
-            <h2 className="menu-title">🍖 Porky Delights Menu</h2>
-            <div className="menu-icon">
-                <Link to="/cart" className="cart-link">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </Link>
-            </div>
+      <div className="menu-header">
+        <h2 className="menu-title">🍖 Porky Delights Menu</h2>
+        <div className="menu-icon">
+          <Link to="/cart" className="cart-link">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </Link>
         </div>
+      </div>
 
       <div className="menu-grid">
         {porkItems.map((item) => (
@@ -68,7 +68,7 @@ const Menu = () => {
           >
             <img src={item.image} alt={item.name} className="menu-image" />
             <h3 className="menu-name">{item.name}</h3>
-            <p className="menu-description">{item.description}</p>
+            <p className="menutab-description">{item.description}</p>
             <div className="menu-bottom">
               <span className="menu-price">{item.price}</span>
               <button onClick={() => handleAddToCart(item)} className="add-btn">Add</button>
@@ -77,7 +77,7 @@ const Menu = () => {
         ))}
         {showPopup && (
           <div className="popup">
-            <p>✅ Added to cart!</p>
+            <p>Added to cart! ✅</p>
           </div>
         )}
       </div>

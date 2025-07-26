@@ -12,10 +12,11 @@
 }
 
 .menu-icon {
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -67,16 +68,15 @@
 
 .menu-title {
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   color: #d14524;
   margin-bottom: 1.5rem;
   font-weight: 700;
 }
 
 .menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .menu-card {
@@ -88,24 +88,24 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .menu-image {
   width: 100%;
-  height: 160px;
+  height: 100px;
   object-fit: cover;
 }
 
 .menu-name {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: bold;
   color: #aa2e25;
   margin: 0.75rem 1rem 0;
 }
 
 .menu-description {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #555;
   margin: 0.5rem 1rem 1rem;
 }
@@ -118,7 +118,7 @@
 }
 
 .menu-price {
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #444;
 }
@@ -130,7 +130,7 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.65rem;
   transition: background 0.2s;
 }
 

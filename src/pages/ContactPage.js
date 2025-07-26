@@ -43,7 +43,7 @@ const ContactPage = () => {
       <div className="contact-options">
         <a href="tel:+254799657824">📞 Call Us</a>
         <a
-          href="https://wa.me/254799657824"
+          href="https://wa.me/+254799657824"
           target="_blank"
           rel="noreferrer"
         >

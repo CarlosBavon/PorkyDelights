@@ -10,8 +10,8 @@ const FavoritesPage = () => {
     setFavorites(storedFavs);
   }, []);
 
-  const removeFromFavorites = (id) => {
-    const updated = favorites.filter((item) => item.id !== id);
+  const removeFromFavorites = (dish) => {
+    const updated = favorites.filter((item) => item.dish !== dish);
     setFavorites(updated);
     localStorage.setItem("favorites", JSON.stringify(updated));
   };
@@ -32,7 +32,7 @@ const FavoritesPage = () => {
       ) : (
         <div className="favorites-list">
           {favorites.map((item) => (
-            <div key={item.id} className="favorite-item">
+            <div key={item.dish} className="favorite-item">
               <img src={item.image} alt={item.name} />
               <div className="item-details">
                 <h3>{item.name}</h3>
@@ -40,9 +40,9 @@ const FavoritesPage = () => {
                 <span>{item.price} KES</span>
                 <button
                   className="remove-btn"
-                  onClick={() => removeFromFavorites(item.id)}
+                  onClick={() => removeFromFavorites(item.dish)}
                 >
-                  ❌ Remove
+                  Remove
                 </button>
               </div>
             </div>

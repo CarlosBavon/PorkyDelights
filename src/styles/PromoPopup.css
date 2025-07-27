@@ -31,7 +31,8 @@
     background: transparent;
     border: none;
     font-size: 20px;
-    cursor: pointer;
+    cursor: url(../pointer.png), pointer;
+    color: white;
 }
 
 @keyframes fadeIn {
@@ -66,9 +67,11 @@
 .popup-social-links {
     align-items: center;
     display: flex;
+    cursor: url(../pointer.png), pointer;
 }
 .popup-social-links a {
     text-decoration: none;
+    cursor: url(../pointer.png), pointer;
 }
 .popup-social-links i {
     text-decoration: none;
@@ -82,10 +85,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: url(../pointer.png), pointer;
 }
 
 .popup-header {
-    margin-top: -20px;
+    margin-top: -60px;
     position: relative;
     background-image: url('../assets/brush.png');
     background-size: cover;
@@ -124,7 +128,7 @@
 .popup-image p {
     position: absolute;
     left: 65%;
-    top: 33%;
+    top: 32%;
     font-size: 2rem;
     border-radius: 50%;
     background-image: url(../assets/circlebrush.png);
@@ -151,7 +155,7 @@
 }
 
 .popup-footer {
-    margin-top: -90px;
+    margin-top: -140px;
     display: flex;
     justify-content: space-between;
 }
@@ -168,6 +172,7 @@
     background-color: wheat;
     padding: 10px 30px;
     font-weight: bold;
+    cursor: url(../pointer.png), pointer;
 }
 
 .popup-contact {

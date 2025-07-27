@@ -12,11 +12,13 @@ import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import PromoPopup from "./components/PromoPopup";
 
 function App() {
   return (
     <div>
       <Navbar />
+      <PromoPopup/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />

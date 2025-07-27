@@ -68,14 +68,31 @@
   rotate: 45deg;
   color: #fff;
 }
+
 .icon {
   rotate: -45deg;
   color: #ffffff;
+  text-decoration: none;
+  background-color: #d64161;
+  border-radius: 50%;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease-in-out;
+}
+.icon:active{
+  background-color: transparent;
+  border: 4px solid #d64161;
+  color: #d64161;
+}
+.icon i {
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
 }
 .icon p {
-  font-size: 0.9rem;
+  font-size: 0.65rem;
 }
-
 .icon:nth-child(1) { top: 10%; left: 50%; transform: translate(-50%, 0); }
 .icon:nth-child(2) { top: 50%; left: 10%; transform: translate(0, -50%); }
 .icon:nth-child(3) { bottom: 10%; left: 50%; transform: translate(-50%, 0); }

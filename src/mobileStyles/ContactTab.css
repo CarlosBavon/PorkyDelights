@@ -3,7 +3,6 @@
   background: linear-gradient(to bottom, #fff0f0, #ffd6d6);
   text-align: center;
   min-height: 100vh;
-  font-family: 'Comic Neue', cursive;
   color: #800000;
 }
 
@@ -18,14 +17,14 @@
   font-size: 1.1rem;
 }
 
-form {
+.snort-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
 
-input, textarea {
+.snort-input, .snort-textarea {
   width: 90%;
   max-width: 400px;
   padding: 0.8rem 1rem;
@@ -36,7 +35,7 @@ input, textarea {
   resize: none;
 }
 
-button {
+.snort-button {
   padding: 0.7rem 2rem;
   background: #ff4d4d;
   color: white;
@@ -47,7 +46,7 @@ button {
   transition: background 0.3s ease;
 }
 
-button:hover {
+.snort-button:hover {
   background: #cc0000;
 }
 

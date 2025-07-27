@@ -15,11 +15,11 @@ const ContactTab = () => {
       <h2>📞 Contact Porky HQ</h2>
       <p>Snort us a message — we love hearing from our bacon buddies!</p>
 
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="🐷 Your Name" required />
-        <input type="email" placeholder="📧 Your Email" required />
-        <textarea placeholder="💌 Your Message" required />
-        <button type="submit">Send Sizzle</button>
+      <form onSubmit={handleSubmit} className="snort-form">
+        <input className="snort-input" type="text" placeholder="🐷 Your Name" required />
+        <input className="snort-input" type="email" placeholder="📧 Your Email" required />
+        <textarea className="snort-textarea" placeholder="💌 Your Message" required rows={6}/>
+        <button className="snort-button" type="submit">Send Sizzle</button>
       </form>
 
       {submitted && (

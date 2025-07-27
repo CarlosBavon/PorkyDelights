@@ -48,10 +48,10 @@ const HomeTab = () => {
             style={{ transform: `rotate(${rotation}deg)` }}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}>
-            <div className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-bowl-food"></i><p>Pork</p></div>
-            <div className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-bacon"></i><p>Bacon</p></div>
-            <div className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-burger"></i><p>Desserts</p></div>
-            <div className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-utensils"></i><p>Menu</p></div>
+            <Link to="/menu" className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-bowl-food"><p>Pork</p></i></Link>
+            <Link to="/menu" className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-bacon"><p>Bacon</p></i></Link>
+            <Link to="/menu" className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-burger"><p>Desserts</p></i></Link>
+            <Link to="/menu" className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-utensils"><p>Menu</p></i></Link>
           </div>
         </div>
       </section>

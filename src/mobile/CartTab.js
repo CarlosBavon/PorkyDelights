@@ -13,7 +13,7 @@ const CartTab = () => {
     <div className="cart-tab">
       <div className="cart-header">
         <h2>Your Cart</h2>
-        <Link to="/menu" className="back-to-menu">Back To Menu</Link>
+        <Link to="/menu" className="back-to-menu">Go To Menu</Link>
       </div>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
@@ -24,7 +24,7 @@ const CartTab = () => {
               <img src={item.image} alt={item.name} />
               <div className="info">
                 <h4>{item.name}</h4>
-                <p>Ksh {item.price}</p>
+                <p>{item.price}</p>
                 <div className="quantity-controls">
                   <button onClick={() => updateQuantity(item.id, -1)}>-</button>
                   <span>{item.quantity}</span>

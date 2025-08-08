@@ -71,3 +71,7 @@
   border: 2px solid #b22222;
   background-color: #ffd6d6;
 }
+
+.nav-link.active {
+  border-bottom: 1px solid;
+}

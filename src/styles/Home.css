@@ -5,7 +5,7 @@
 
 .hero {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   background: url('../assets/hero-pork.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -51,6 +51,7 @@
   padding: 2rem;
   background-color: #fdf5e6;
   text-align: center;
+  margin-top: 50px;
 }
 
 .dishes {

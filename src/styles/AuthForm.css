@@ -7,6 +7,7 @@
   box-shadow: 0 0 10px rgba(200, 0, 0, 0.2);
   text-align: center;
   font-family: "Segoe UI", sans-serif;
+  margin-top: 150px;
 }
 
 .auth-container h2 {

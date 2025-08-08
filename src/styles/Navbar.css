@@ -1,15 +1,26 @@
 /* src/components/Navbar.css */
 
 .navbar {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #b22222;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px); /* frosted glass effect */
+  -webkit-backdrop-filter: blur(2px); /* Safari support */
   padding: 1rem 2rem;
-  position: sticky;
   top: 0;
-  z-index: 100;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  animation: slideDown 0.5s ease forwards;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -18,7 +29,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.logo li{
+.logo li {
   list-style: none;
 }
 
@@ -37,41 +48,116 @@
   gap: 2rem;
 }
 
-.nav-links li a {
+.nav-link {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  position: relative;
+  transition: color 0.3s ease;
   cursor: url(../pointer.png), pointer;
 }
 
-.nav-links li a:hover {
-  color: #ffd6d6;
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
 }
 
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #ffd7d7;
+}
+
+/* Auth buttons */
 .signing-links {
   display: flex;
-  gap: 1rem;
+  gap: 10px;
   list-style: none;
 }
 
-.signing-links li a {
+.auth-btn {
+  background: transparent;
+  border: 1.5px solid white;
+  border-radius: 20px;
+  padding: 5px 14px;
   color: white;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-  border: 2px solid #ffd6d6;
-  border-radius: 15px;
-  padding: 0.2rem 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+  background: white;
+  color: #a51d1d;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
   cursor: url(../pointer.png), pointer;
 }
 
-.signing-links li a:hover {
-  color: #b22222;
-  border: 2px solid #b22222;
-  background-color: #ffd6d6;
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
 }
 
-.nav-link.active {
-  border-bottom: 1px solid;
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: -100%;
+    background: #a51d1d;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    transition: right 0.4s ease;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .signing-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Slide-down animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

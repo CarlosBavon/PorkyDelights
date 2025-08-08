@@ -21,13 +21,11 @@ const Navbar = () => {
   const navItems = [
     { to: "/", label: "Home" },
     { to: "/menu", label: "Menu" },
-    { to: "/contact", label: "Contact" },
     { to: "/about", label: "About" },
   ];
 
-  const authLinks = [
-    { to: "/login", label: "Login" },
-    { to: "/signup", label: "SignUp" },
+  const contactLink = [
+    { to: "/contact", label: "Contact" },
   ];
 
   return (
@@ -63,11 +61,16 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {/* Auth Links */}
-      <ul className="signing-links">
-        {authLinks.map((item) => (
+      {/* Contact Link */}
+      <ul className={`contact-link ${menuOpen ? "open" : ""}`}>
+        {contactLink.map((item) => (
           <li key={item.to}>
-            <Link to={item.to} className="auth-btn">
+            <Link
+              to={item.to}
+              className={`contact-btn ${location.pathname === item.to ? "active" : ""
+                }`}
+              onClick={() => setMenuOpen(false)}
+            >
               {item.label}
             </Link>
           </li>

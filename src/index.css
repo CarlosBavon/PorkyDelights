@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   cursor: url(cursor.png), auto;
   font-size: 0.9rem;
+  background-color: #fdf5e6
 }
 
 

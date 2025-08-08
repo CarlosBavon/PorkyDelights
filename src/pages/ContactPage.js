@@ -17,7 +17,7 @@ const ContactPage = () => {
   return (
     <div className="contact-page">
       <div className="contact-hero">
-        <h1>📞 Let’s Talk Pork, Baby!</h1>
+        <h1>📞 Let’s Talk Pork!</h1>
         <p>Got a craving, question, or custom order? Reach out and let’s cook it up!</p>
       </div>
 

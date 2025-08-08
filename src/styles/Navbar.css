@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(165, 29, 29, 0.7);
   backdrop-filter: blur(2px); /* frosted glass effect */
   -webkit-backdrop-filter: blur(2px); /* Safari support */
   padding: 1rem 2rem;
@@ -19,7 +19,7 @@
 }
 
 .navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 

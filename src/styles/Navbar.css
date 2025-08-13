@@ -5,11 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: radial-gradient(
-    circle 100px at var(--x, 50%) var(--y, 50%),
-    red,
-    #a51d1d
-  );
+  background: #a51d1d;
   backdrop-filter: blur(2px); /* frosted glass effect */
   -webkit-backdrop-filter: blur(2px); /* Safari support */
   padding: 8px 2rem;

@@ -40,10 +40,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`} onMouseMove={handleMouseMove} style={{
-        "--x": `${pos.x}px`,
-        "--y": `${pos.y}px`
-      }}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`} onMouseMove={handleMouseMove}>
       {/*LOGO*/}
       <div className="logo">
         <li><Link to="/" className="logo-link">Porky Delights</Link></li>

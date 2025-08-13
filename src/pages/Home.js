@@ -27,19 +27,19 @@ const Home = () => {
             <DishCard
                 title="Spicy Pork Ribs"
                 description="Tender ribs marinated with sause."
-                price="$15.99"
+                price="Ksh 600"
                 imgSrc={PorkRibs}
             />
             <DishCard
                 title="Crispy Pork Belly"
                 description="Served with a tangy sauce."
-                price="$12.99"
+                price="Ksh 750"
                 imgSrc={PorkBelly}
             />
             <DishCard
                 title="Pork Chops"
                 description="Seasoned to great perfection."
-                price="$10.99"
+                price="Ksh 900"
                 imgSrc={PorkChops}
             />
         </div>

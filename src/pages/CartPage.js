@@ -23,7 +23,6 @@ function CartPage() {
     localStorage.setItem("cart", JSON.stringify(updated));
   };
 
-
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -39,17 +38,17 @@ function CartPage() {
     localStorage.removeItem("cart");
   };
 
-
   return (
     <div className="cart-container">
-      <Link to="/menu" className="back-btn">⬅ Back to Menu</Link>
+      <Link to="/menu" className="back-btn">
+        ⬅ Back to Menu
+      </Link>
       <h1>🛒 Your Porky Cart</h1>
       {cartItems.length > 0 && (
         <button className="clear-cart-btn" onClick={clearCart}>
           🧹 Clear All
         </button>
       )}
-
 
       {cartItems.length === 0 ? (
         <p className="empty">Your cart is still hungry, add some pork! 🐷</p>
@@ -72,13 +71,37 @@ function CartPage() {
           ))}
 
           <h2 className="cart-total">Grand Total: {getTotal()} KES</h2>
-
         </div>
       )}
-      <ul className="proceed-checkout-btn">
-        <li>
-          <a href="/checkout">🧾 Proceed to Checkout</a>
-        </li>
+      <ul
+        className="proceed-checkout-btn"
+      >
+        {cartItems.length > 0 ? (
+          <Link to="/checkout">🧾 Proceed to Checkout</Link>
+        ) : (
+          <li
+            style={{
+              cursor: "not-allowed",
+            }}
+          >
+            <button
+              onClick={() =>
+                alert(
+                  "Your cart is empty! Add some pork before checking out 🐷"
+                )
+              }
+              style={{
+                cursor: "not-allowed",
+                background: "none",
+                border: "none",
+                color: "white",
+                fontSize: "1rem",
+              }}
+            >
+              <em>🧾 Proceed to Checkout</em>
+            </button>
+          </li>
+        )}
       </ul>
     </div>
   );

@@ -4,6 +4,17 @@ import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css"; // Assuming you have a CSS file for styling
 
 const Navbar = () => {
+
+  const [pos, setPos] = useState({ x:0, y:0});
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPos({
+      x: e.clientX - rect.left, // position relative to navbar
+      y: e.clientY - rect.top
+    })
+  } 
+
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,7 +40,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`} onMouseMove={handleMouseMove} style={{
+        "--x": `${pos.x}px`,
+        "--y": `${pos.y}px`
+      }}>
       {/*LOGO*/}
       <div className="logo">
         <li><Link to="/" className="logo-link">Porky Delights</Link></li>

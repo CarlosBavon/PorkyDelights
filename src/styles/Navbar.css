@@ -5,7 +5,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(165, 29, 29, 0.9);
+  background: radial-gradient(
+    circle 100px at var(--x, 50%) var(--y, 50%),
+    red,
+    #a51d1d
+  );
   backdrop-filter: blur(2px); /* frosted glass effect */
   -webkit-backdrop-filter: blur(2px); /* Safari support */
   padding: 8px 2rem;
@@ -14,19 +18,19 @@
   width: 100%;
   box-sizing: border-box;
   z-index: 1000;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.05s linear, box-shadow 0.3s ease;
   animation: slideDown 0.5s ease forwards;
 }
 
 .navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .logo li {
@@ -38,7 +42,7 @@
   color: white;
   font-weight: bold;
   font-size: 1.5rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   cursor: url(../pointer.png), pointer;
 }
 

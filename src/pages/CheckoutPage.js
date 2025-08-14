@@ -13,6 +13,14 @@ const CheckoutPage = () => {
   const [house, setHouse] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [payment, setPayment] = useState("");
+  const [formData, setFormData] = useState({
+    mpesaNumber: "",
+    cardNumber: "",
+    cardName: "",
+    cardExpiry: "",
+    cardCVV: "",
+    paypalEmail: "",
+  });
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -134,7 +142,7 @@ const CheckoutPage = () => {
                 <p>Mpesa</p>
                 <input
                   type="radio"
-                  name={payment}
+                  name="payment"
                   value="Mpesa"
                   onChange={(e) => setPayment(e.target.value)}
                 />
@@ -143,7 +151,7 @@ const CheckoutPage = () => {
                 <p>Credit/Debit Card</p>
                 <input
                   type="radio"
-                  name={payment}
+                  name="payment"
                   value="Card"
                   onChange={(e) => setPayment(e.target.value)}
                 />
@@ -152,7 +160,7 @@ const CheckoutPage = () => {
                 <p>PayPal</p>
                 <input
                   type="radio"
-                  name={payment}
+                  name="payment"
                   value="PayPal"
                   onChange={(e) => setPayment(e.target.value)}
                 />
@@ -160,14 +168,88 @@ const CheckoutPage = () => {
               <div className="payment-option">
                 <p>Cash on Delivery</p>
                 <input
-                  className="cash-on-delivery"
                   type="radio"
-                  name={payment}
+                  name="payment"
                   value="Cash"
                   onChange={(e) => setPayment(e.target.value)}
                 />
               </div>
             </div>
+
+            {/* Conditional Fields */}
+            {payment === "Mpesa" && (
+              <div className="payment-details">
+                <label>Mpesa Phone Number:</label>
+                <input
+                  type="tel"
+                  placeholder="e.g. 0712 345 678"
+                  value={formData.mpesaNumber}
+                  onChange={(e) =>
+                    setFormData({ ...formData, mpesaNumber: e.target.value })
+                  }
+                />
+              </div>
+            )}
+
+            {payment === "Card" && (
+              <div className="payment-details">
+                <label>Card Number:</label>
+                <input
+                  type="text"
+                  placeholder="1234 5678 9012 3456"
+                  value={formData.cardNumber}
+                  onChange={(e) =>
+                    setFormData({ ...formData, cardNumber: e.target.value })
+                  }
+                />
+                <label>Name on Card:</label>
+                <input
+                  type="text"
+                  placeholder="John Doe"
+                  value={formData.cardName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, cardName: e.target.value })
+                  }
+                />
+                <label>Expiry Date:</label>
+                <input
+                  type="month"
+                  value={formData.cardExpiry}
+                  onChange={(e) =>
+                    setFormData({ ...formData, cardExpiry: e.target.value })
+                  }
+                />
+                <label>CVV:</label>
+                <input
+                  type="password"
+                  placeholder="123"
+                  value={formData.cardCVV}
+                  onChange={(e) =>
+                    setFormData({ ...formData, cardCVV: e.target.value })
+                  }
+                />
+              </div>
+            )}
+
+            {payment === "PayPal" && (
+              <div className="payment-details">
+                <label>PayPal Email:</label>
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  value={formData.paypalEmail}
+                  onChange={(e) =>
+                    setFormData({ ...formData, paypalEmail: e.target.value })
+                  }
+                />
+              </div>
+            )}
+
+            {payment === "Cash" && (
+              <div className="payment-details">
+                <p>💵 Please have the exact amount ready upon delivery.</p>
+              </div>
+            )}
 
             <button className="place-order-btn" onClick={handleOrder}>
               ✅ Place Order

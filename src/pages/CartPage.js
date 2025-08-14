@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { getCart } from "../utils/storageUtils";
 import { Link } from "react-router-dom";
+import Toast from "../components/Toast";
 import "../styles/CartPage.css";
 
 function CartPage() {
@@ -36,6 +37,13 @@ function CartPage() {
   const clearCart = () => {
     setCartItems([]);
     localStorage.removeItem("cart");
+  };
+
+  const [toastMessage, setToastMessage] = useState("");
+
+  const showToast = (msg) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(""), 2000); // hide after 2s
   };
 
   return (
@@ -81,7 +89,7 @@ function CartPage() {
           <h2 className="cart-total">Grand Total: {getTotal()} KES</h2>
         </div>
       )}
-      <ul className="proceed-checkout-btn" style={{cursor: "not-allowed",}}>
+      <ul className="proceed-checkout-btn" style={{ cursor: "not-allowed" }}>
         {cartItems.length > 0 ? (
           <Link to="/checkout">🧾 Proceed to Checkout</Link>
         ) : (
@@ -91,11 +99,9 @@ function CartPage() {
             }}
           >
             <button
-              onClick={() =>
-                alert(
-                  "Your cart is empty! Add some pork before checking out 🐷"
-                )
-              }
+              onClick={(e) => {
+                showToast("Please add items to your cart first! 🛒");
+              }}
               style={{
                 cursor: "not-allowed",
                 background: "none",
@@ -106,6 +112,7 @@ function CartPage() {
             >
               <em>🧾 Proceed to Checkout</em>
             </button>
+            {toastMessage && <Toast message={toastMessage} />}
           </li>
         )}
       </ul>

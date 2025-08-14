@@ -7,10 +7,10 @@ const CheckoutPage = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [county, setCounty] = useState("")
-  const [town, setTown] = useState("")
-  const [street, setStreet] = useState("")
-  const [house, setHouse] = useState("")
+  const [county, setCounty] = useState("");
+  const [town, setTown] = useState("");
+  const [street, setStreet] = useState("");
+  const [house, setHouse] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [payment, setPayment] = useState("");
 
@@ -43,7 +43,6 @@ const CheckoutPage = () => {
         </Link>
         <h1>Checkout 🧾</h1>
       </div>
-      
 
       {orderPlaced ? (
         <div className="thank-you">
@@ -58,7 +57,18 @@ const CheckoutPage = () => {
           <div className="checkout-summary">
             {cartItems.map((item, index) => (
               <div key={index} className="checkout-item">
-                <span>{item.name} x {item.quantity}</span>
+                <div className="checkout-item-details">
+                  <span>
+                    {item.name} x {item.quantity}
+                  </span>
+
+                  {/* Show additives if they exist */}
+                  {item.additives && item.additives.length > 0 && (
+                    <div className="checkout-additives">
+                      <em>Additives: {item.additives.join(", ")}</em>
+                    </div>
+                  )}
+                </div>
                 <span>{item.price * item.quantity} KES</span>
               </div>
             ))}
@@ -90,34 +100,33 @@ const CheckoutPage = () => {
               required
             />
             <h3>🚚 Delivery Address</h3>
-            <input 
-              name="county" 
-              placeholder="County" 
+            <input
+              name="county"
+              placeholder="County"
               value={county}
-              onChange={(e) => setCounty(e.target.value)} 
+              onChange={(e) => setCounty(e.target.value)}
             />
 
-            <input 
-              name="town" 
-              placeholder="Town" 
+            <input
+              name="town"
+              placeholder="Town"
               value={town}
-              onChange={(e) => setTown(e.target.value)} 
+              onChange={(e) => setTown(e.target.value)}
             />
 
-            <input 
-              name="street" 
+            <input
+              name="street"
               value={street}
-              placeholder="Street / Estate" 
-              onChange={(e) => setStreet(e.target.value)} 
+              placeholder="Street / Estate"
+              onChange={(e) => setStreet(e.target.value)}
             />
 
-            <input 
-              name="house" 
-              placeholder="House Number / Apartment" 
+            <input
+              name="house"
+              placeholder="House Number / Apartment"
               value={house}
-              onChange={(e) => setHouse(e.target.value)} 
+              onChange={(e) => setHouse(e.target.value)}
             />
-
 
             <h3>💳 Payment Method</h3>
             <div className="payment-options">
@@ -159,8 +168,7 @@ const CheckoutPage = () => {
                 />
               </div>
             </div>
-            
-            
+
             <button className="place-order-btn" onClick={handleOrder}>
               ✅ Place Order
             </button>

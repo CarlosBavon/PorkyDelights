@@ -156,4 +156,10 @@
 .back-btn:hover {
   color: #ffffff;
 }
+.cart-additives {
+  font-size: 0.9rem;
+  color: red;
+  margin: 5px 0;
+}
+
 

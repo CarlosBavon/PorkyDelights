@@ -5,6 +5,13 @@ import { Link } from "react-router-dom";
 import "../styles/CartPage.css";
 
 function CartPage() {
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const items = getCart();
+    setCartItems(items);
+  }, []);
+
   const increaseQty = (index) => {
     const updated = [...cartItems];
     updated[index].quantity += 1;
@@ -17,18 +24,11 @@ function CartPage() {
     if (updated[index].quantity > 1) {
       updated[index].quantity -= 1;
     } else {
-      updated.splice(index, 1); // remove item if qty hits 0
+      updated.splice(index, 1);
     }
     setCartItems(updated);
     localStorage.setItem("cart", JSON.stringify(updated));
   };
-
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    const items = getCart();
-    setCartItems(items);
-  }, []);
 
   const getTotal = () =>
     cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -59,6 +59,14 @@ function CartPage() {
               <img src={item.image} alt={item.name} />
               <div>
                 <h3>{item.name}</h3>
+
+                {/* Show additives if any */}
+                {item.additives && item.additives.length > 0 && (
+                  <p className="cart-additives">
+                    <strong>Additives:</strong> {item.additives.join(", ")}
+                  </p>
+                )}
+
                 <p>Price: {item.price} KES</p>
                 <div className="qty-control">
                   <button onClick={() => decreaseQty(index)}>-</button>

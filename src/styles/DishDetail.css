@@ -93,3 +93,21 @@
 .dish-actions .cart-btn:hover {
   background-color: #ffc966;
 }
+
+.additives-section {
+  margin: 20px 0;
+  border: 1px solid #b22222;
+  border-radius: 10px;
+  align-items: center;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.additive-option {
+  display: block;
+  margin: 5px 0;
+  font-size: 16px;
+  text-align: left;
+  margin-left: 20px;
+}

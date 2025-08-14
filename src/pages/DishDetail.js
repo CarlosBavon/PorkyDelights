@@ -1,27 +1,52 @@
 // src/pages/DishDetail.js
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/DishDetail.css";
-import { useState } from "react";
 import Toast from "../components/Toast";
 import { addToFavorites, addToCart } from "../utils/storageUtils";
 
-
 const DishDetail = () => {
   const [toastMessage, setToastMessage] = useState("");
-
-  const showToast = (msg) => {
-    setToastMessage(msg);
-    setTimeout(() => setToastMessage(""), 2000); // hide after 2s
-  };
+  const [selectedAdditives, setSelectedAdditives] = useState([]);
 
   const navigate = useNavigate();
-
   const location = useLocation();
   const dish = location.state?.dish;
 
-  if (!dish) return <p>Dish not found.</p>;
+  const additivesList = [
+    "With Sauce",
+    "Extra Spices",
+    "Extra Cheese",
+    "Gluten-Free",
+    "No Salt"
+  ];
 
+  const showToast = (msg) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(""), 2000);
+  };
+
+  const toggleAdditive = (additive) => {
+    setSelectedAdditives((prev) =>
+      prev.includes(additive)
+        ? prev.filter((item) => item !== additive)
+        : [...prev, additive]
+    );
+  };
+
+  const handleAddToCart = () => {
+    const dishWithAdditives = { ...dish, additives: selectedAdditives };
+    addToCart(dishWithAdditives);
+    showToast(`${dish.name} with ${selectedAdditives.join(", ") || "no additives"} added to Cart 🛒`);
+  };
+
+  const handleAddToFavorites = () => {
+    const dishWithAdditives = { ...dish, additives: selectedAdditives };
+    addToFavorites(dishWithAdditives);
+    showToast(`${dish.name} added to Favorites ❤️`);
+  };
+
+  if (!dish) return <p>Dish not found.</p>;
 
   return (
     <div className="dish-detail">
@@ -34,27 +59,32 @@ const DishDetail = () => {
       <img src={dish.image} alt={dish.name} />
       <h1>{dish.name}</h1>
       <p className="desc">{dish.description}</p>
-      <ul>
-        <li>🔥 Fresh ingredients</li>
-        <li>🍴 Perfectly seasoned</li>
-        <li>💯 Porky satisfaction guaranteed</li>
-      </ul>
-      <button className="order-btn" onClick={() => {
-        addToCart(dish);
-        showToast(`${dish.name} added to Cart 🛒`)
-      }}>Order Now</button>
+
+      {/* Additives Section */}
+      <div className="additives-section">
+        <h3>Choose Additives:</h3>
+        {additivesList.map((additive) => (
+          <label key={additive} className="additive-option">
+            <input
+              type="checkbox"
+              checked={selectedAdditives.includes(additive)}
+              onChange={() => toggleAdditive(additive)}
+            />
+            {additive}
+          </label>
+        ))}
+      </div>
+
+      <button className="order-btn" onClick={handleAddToCart}>
+        Order Now
+      </button>
+
       <div className="dish-actions">
-        <button className="fav-btn" onClick={() => {
-          addToFavorites(dish);
-          showToast(`${dish.name} added to Favorites ❤️`)
-        }}>
+        <button className="fav-btn" onClick={handleAddToFavorites}>
           ❤️ Add to Favs
         </button>
 
-        <button className="cart-btn" onClick={() => {
-          addToCart(dish);
-          showToast(`${dish.name} added to Cart 🛒`)
-        }}>
+        <button className="cart-btn" onClick={handleAddToCart}>
           🛒 Add to Cart
         </button>
       </div>

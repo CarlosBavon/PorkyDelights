@@ -18,7 +18,10 @@ const ContactPage = () => {
     <div className="contact-page">
       <div className="contact-hero">
         <h1>📞 Let’s Talk Pork!</h1>
-        <p>Got a craving, question, or custom order? Reach out and let’s cook it up!</p>
+        <p>
+          Got a craving, question, or custom order? Reach out and let’s cook it
+          up!
+        </p>
       </div>
 
       <form className="contact-form" onSubmit={handleSubmit}>
@@ -42,11 +45,7 @@ const ContactPage = () => {
 
       <div className="contact-options">
         <a href="tel:+254799657824">📞 Call Us</a>
-        <a
-          href="https://wa.me/+254799657824"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://wa.me/+254799657824" target="_blank" rel="noreferrer">
           💬 WhatsApp Chat
         </a>
         <a href="mailto:carlosbavon46@gmail.com">📧 Email Us</a>

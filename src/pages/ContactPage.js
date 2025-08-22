@@ -3,12 +3,11 @@ import "../styles/ContactPage.css";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", message: "" });
+  const [result, setResult] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
-  const [result, setResult] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -16,6 +15,8 @@ const ContactPage = () => {
     const formData = new FormData(event.target);
 
     formData.append("access_key", "236d1e5f-8fbf-4cfc-9d6c-eabc77a88cd0");
+    formData.append("from_name", "Porky Delights Contact Form");
+    formData.append("subject", "🥓 New Porky Message!");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",

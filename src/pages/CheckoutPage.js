@@ -21,7 +21,8 @@ const CheckoutPage = () => {
     cardCVV: "",
     paypalEmail: "",
   });
-  const [accountNumber, setAccountNumber] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [paymentStatus, setPaymentStatus] = useState("");
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -33,44 +34,123 @@ const CheckoutPage = () => {
     0
   );
 
-  const handleOrder = (e) => {
-
-    e.preventDefault();
-    fetch("http://localhost:5000/api/stkpush", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        amount: total,
-        accountNumber: accountNumber,
-        phone: phone,
-        email: email,
-        name: name,
-        county: county,
-        town: town,
-        street: street,
-        house: house,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setOrderPlaced(true);
-        localStorage.removeItem("cart");
-      })
-      .catch((error) => {
-        console.error(error);
+  const initiateMpesaPayment = async (orderId) => {
+    try {
+      setLoading(true);
+      const response = await fetch("https://porky-mpesa.onrender.com/api/mpesa/stkpush", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          phoneNumber: formData.mpesaNumber || phone,
+          amount: total,
+          accountReference: orderId,
+          description: `Payment for order ${orderId}`,
+        }),
       });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setPaymentStatus("pending");
+        // Poll for payment status (simplified version)
+        checkPaymentStatus(data.checkoutRequestID, orderId);
+      } else {
+        alert(
+          "Failed to initiate Mpesa payment: " +
+            (data.details || "Unknown error")
+        );
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Mpesa payment error:", error);
+      alert("Failed to initiate payment. Please try again.");
+      setLoading(false);
+    }
+  };
+
+  const checkPaymentStatus = async (checkoutRequestID, orderId) => {
+    // This is a simplified version - in production, you'd use WebSockets or proper polling
+    setTimeout(async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/payment/status/${checkoutRequestID}`
+        );
+        const statusData = await response.json();
+
+        if (statusData.ResultCode === 0) {
+          setPaymentStatus("success");
+          completeOrder(orderId, true);
+        } else {
+          setPaymentStatus("failed");
+          alert("Payment failed. Please try again.");
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Status check error:", error);
+        setLoading(false);
+      }
+    }, 30000); // Check after 30 seconds
+  };
+
+  const completeOrder = (orderId, paymentSuccess = false) => {
+    setOrderPlaced(true);
+    localStorage.removeItem("cart");
+    setLoading(false);
+  };
+
+  const handleOrder = async (e) => {
+    e.preventDefault();
 
     if (!name || !phone || !email) {
       alert("Please fill out all fields");
       return;
     }
 
-    // In a real app, send data to backend here
-    setOrderPlaced(true);
-    localStorage.removeItem("cart");
+    if (payment === "Mpesa" && !formData.mpesaNumber && !phone) {
+      alert("Please provide Mpesa phone number");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // First create the order
+      const orderData = {
+        customerInfo: { name, phone, email },
+        cartItems,
+        total,
+        deliveryAddress: { county, town, street, house },
+        paymentMethod: payment,
+      };
+
+      const orderResponse = await fetch("http://localhost:5000/api/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderData),
+      });
+
+      const orderResult = await orderResponse.json();
+
+      if (orderResult.success) {
+        if (payment === "Mpesa") {
+          await initiateMpesaPayment(orderResult.orderId);
+        } else {
+          // For other payment methods, just complete the order
+          completeOrder(orderResult.orderId, true);
+        }
+      } else {
+        alert("Failed to create order");
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Order error:", error);
+      alert("Failed to place order. Please try again.");
+      setLoading(false);
+    }
   };
 
   return (
@@ -86,6 +166,9 @@ const CheckoutPage = () => {
         <div className="thank-you">
           <h2>🎉 Thank you, {name}!</h2>
           <p>Your order has been placed successfully.</p>
+          {payment === "Mpesa" && paymentStatus === "success" && (
+            <p>✅ Mpesa payment confirmed</p>
+          )}
           <Link to="/menu">
             <button className="go-to-menu">Back to Menu</button>
           </Link>
@@ -99,8 +182,6 @@ const CheckoutPage = () => {
                   <span>
                     {item.name} x {item.quantity}
                   </span>
-
-                  {/* Show additives if they exist */}
                   {item.additives && item.additives.length > 0 && (
                     <div className="checkout-additives">
                       <em>Additives: {item.additives.join(", ")}</em>
@@ -115,7 +196,7 @@ const CheckoutPage = () => {
             </div>
           </div>
 
-          <form className="checkout-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="checkout-form" onSubmit={handleOrder}>
             <input
               type="text"
               placeholder="Your Name"
@@ -212,6 +293,7 @@ const CheckoutPage = () => {
                 <label>Mpesa Phone Number:</label>
                 <input
                   type="tel"
+                  name="phone"
                   placeholder="0700 000 000"
                   value={formData.mpesaNumber}
                   onChange={(e) =>
@@ -281,9 +363,20 @@ const CheckoutPage = () => {
               </div>
             )}
 
-            <button className="place-order-btn" onClick={handleOrder}>
-              ✅ Place Order
+            <button
+              className="place-order-btn"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Processing..." : "✅ Place Order"}
             </button>
+
+            {paymentStatus === "pending" && (
+              <div className="payment-pending">
+                <p>⏳ Waiting for Mpesa payment confirmation...</p>
+                <p>Please check your phone to complete the payment.</p>
+              </div>
+            )}
           </form>
         </>
       )}

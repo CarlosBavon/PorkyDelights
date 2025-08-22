@@ -151,7 +151,7 @@ const CheckoutPage = () => {
 
         // ✅ Clear the cart after successful order
         setCartItems([]);
-        localStorage.removeItem("cartItems"); // also clear from localStorage if you store it there
+        localStorage.removeItem("cart"); // also clear from localStorage if you store it there
         
       } else {
         alert("Failed to create order");

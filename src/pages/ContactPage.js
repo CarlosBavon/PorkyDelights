@@ -8,10 +8,29 @@ const ContactPage = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("🐷 Thank you, we’ll get back to you soon!");
-    setForm({ name: "", message: "" });
+  const [result, setResult] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "236d1e5f-8fbf-4cfc-9d6c-eabc77a88cd0");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("🐷 Thank you, we’ll get back to you soon!");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
 
   return (
@@ -33,6 +52,14 @@ const ContactPage = () => {
           onChange={handleChange}
           required
         />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
         <textarea
           name="message"
           placeholder="What’s on your mind?"
@@ -42,6 +69,7 @@ const ContactPage = () => {
         />
         <button type="submit">🐖 Send Message</button>
       </form>
+      {result && <div className="contact-result">{result}</div>}
 
       <div className="contact-options">
         <a href="tel:+254799657824">📞 Call Us</a>

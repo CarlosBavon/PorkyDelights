@@ -21,7 +21,6 @@ const CheckoutPage = () => {
     cardCVV: "",
     paypalEmail: "",
   });
-  const [amount, setAmount] = useState(0);
   const [accountNumber, setAccountNumber] = useState("");
 
   useEffect(() => {

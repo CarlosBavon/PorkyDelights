@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/CheckoutPage.css";
+import { global_url } from "../App";
 
 const CheckoutPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -37,7 +38,7 @@ const CheckoutPage = () => {
   const initiateMpesaPayment = async (orderId) => {
     try {
       setLoading(true);
-      const response = await fetch("https://porky-mpesa.onrender.com/api/mpesa/stkpush", {
+      const response = await fetch(`${global_url}/api/mpesa/stkpush`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

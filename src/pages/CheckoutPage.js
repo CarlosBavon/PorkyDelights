@@ -37,18 +37,21 @@ const CheckoutPage = () => {
   const initiateMpesaPayment = async (orderId) => {
     try {
       setLoading(true);
-      const response = await fetch("https://porky-mpesa.onrender.com/api/mpesa/stkpush", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          phoneNumber: formData.mpesaNumber || phone,
-          amount: total,
-          accountReference: orderId,
-          description: `Payment for order ${orderId}`,
-        }),
-      });
+      const response = await fetch(
+        "https://porky-mpesa.onrender.com/api/mpesa/stkpush",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            phoneNumber: formData.mpesaNumber || phone,
+            amount: total,
+            accountReference: orderId,
+            description: `Payment for order ${orderId}`,
+          }),
+        }
+      );
 
       const data = await response.json();
 
@@ -125,13 +128,16 @@ const CheckoutPage = () => {
         paymentMethod: payment,
       };
 
-      const orderResponse = await fetch("https://porky-mpesa.onrender.com/api/orders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderData),
-      });
+      const orderResponse = await fetch(
+        "https://porky-mpesa.onrender.com/api/orders",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(orderData),
+        }
+      );
 
       const orderResult = await orderResponse.json();
 
@@ -142,6 +148,11 @@ const CheckoutPage = () => {
           // For other payment methods, just complete the order
           completeOrder(orderResult.orderId, true);
         }
+
+        // ✅ Clear the cart after successful order
+        setCartItems([]);
+        localStorage.removeItem("cartItems"); // also clear from localStorage if you store it there
+        
       } else {
         alert("Failed to create order");
         setLoading(false);

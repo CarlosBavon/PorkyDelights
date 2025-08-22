@@ -89,7 +89,7 @@ function CartPage() {
           <h2 className="cart-total">Grand Total: {getTotal()} KES</h2>
         </div>
       )}
-      <ul className="proceed-checkout-btn" style={{ cursor: "not-allowed" }}>
+      <ul className="proceed-checkout-btn">
         {cartItems.length > 0 ? (
           <Link to="/checkout">🧾 Proceed to Checkout</Link>
         ) : (

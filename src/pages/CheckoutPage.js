@@ -21,6 +21,8 @@ const CheckoutPage = () => {
     cardCVV: "",
     paypalEmail: "",
   });
+  const [amount, setAmount] = useState(0);
+  const [accountNumber, setAccountNumber] = useState("");
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -32,7 +34,36 @@ const CheckoutPage = () => {
     0
   );
 
-  const handleOrder = () => {
+  const handleOrder = (e) => {
+
+    e.preventDefault();
+    fetch("http://localhost:5000/api/stkpush", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        amount: total,
+        accountNumber: accountNumber,
+        phone: phone,
+        email: email,
+        name: name,
+        county: county,
+        town: town,
+        street: street,
+        house: house,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setOrderPlaced(true);
+        localStorage.removeItem("cart");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
     if (!name || !phone || !email) {
       alert("Please fill out all fields");
       return;
@@ -182,7 +213,7 @@ const CheckoutPage = () => {
                 <label>Mpesa Phone Number:</label>
                 <input
                   type="tel"
-                  placeholder="e.g. 0712 345 678"
+                  placeholder="0700 000 000"
                   value={formData.mpesaNumber}
                   onChange={(e) =>
                     setFormData({ ...formData, mpesaNumber: e.target.value })

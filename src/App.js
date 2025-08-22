@@ -14,8 +14,6 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import PromoPopup from "./components/PromoPopup";
 
-export const global_url = "https://porky-mpesa.onrender.com";
-
 function App() { 
   return (
     <div>

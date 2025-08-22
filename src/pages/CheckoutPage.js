@@ -75,7 +75,7 @@ const CheckoutPage = () => {
     setTimeout(async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/payment/status/${checkoutRequestID}`
+          `https://porky-mpesa.onrender.com/api/payment/status/${checkoutRequestID}`
         );
         const statusData = await response.json();
 
@@ -125,7 +125,7 @@ const CheckoutPage = () => {
         paymentMethod: payment,
       };
 
-      const orderResponse = await fetch("http://localhost:5000/api/orders", {
+      const orderResponse = await fetch("https://porky-mpesa.onrender.com/api/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

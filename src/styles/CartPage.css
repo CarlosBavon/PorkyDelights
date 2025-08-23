@@ -14,8 +14,9 @@
 
 .cart-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .cart-item {
@@ -24,7 +25,9 @@
   background: #fff0e6;
   padding: 1rem;
   border-radius: 12px;
+  border: 1px solid #ffcccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  width: 300px;
 }
 
 .cart-item img {

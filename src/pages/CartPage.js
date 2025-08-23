@@ -85,10 +85,9 @@ function CartPage() {
               </div>
             </div>
           ))}
-
-          <h2 className="cart-total">Grand Total: {getTotal()} KES</h2>
         </div>
       )}
+      <h2 className="cart-total">Grand Total: {getTotal()} KES</h2>
       <ul className="proceed-checkout-btn">
         {cartItems.length > 0 ? (
           <Link to="/checkout">🧾 Proceed to Checkout</Link>

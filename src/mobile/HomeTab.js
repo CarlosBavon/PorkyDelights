@@ -43,15 +43,49 @@ const HomeTab = () => {
           <input type="text" placeholder="Porky Search" />
         </div>
         <div className="overlay-tab">
-          <div className="overlay-icons"
+          <div
+            className="overlay-icons"
             ref={menuRef}
             style={{ transform: `rotate(${rotation}deg)` }}
             onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}>
-            <Link to="/menu" className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-bowl-food"><p>Pork</p></i></Link>
-            <Link to="/menu" className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-bacon"><p>Bacon</p></i></Link>
-            <Link to="/menu" className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-burger"><p>Desserts</p></i></Link>
-            <Link to="/menu" className="icon" style={{ transform: `rotate(${-rotation}deg)` }}><i class="fa-solid fa-utensils"><p>Menu</p></i></Link>
+            onTouchMove={handleTouchMove}
+          >
+            <Link
+              to="/menu"
+              className="icon"
+              style={{ transform: `rotate(${-rotation}deg)` }}
+            >
+              <i class="fa-solid fa-bowl-food">
+                <p>Pork</p>
+              </i>
+            </Link>
+            <Link
+              to="/menu"
+              className="icon"
+              style={{ transform: `rotate(${-rotation}deg)` }}
+            >
+              <i class="fa-solid fa-bacon">
+                <p>Bacon</p>
+              </i>
+            </Link>
+            <Link
+              to="/menu"
+              className="icon"
+              style={{ transform: `rotate(${-rotation}deg)` }}
+            >
+              <i class="fa-solid fa-burger">
+                <p>Desserts</p>
+              </i>
+            </Link>
+            <Link
+              to="/menu"
+              className="icon"
+              style={{ transform: `rotate(${-rotation}deg)` }}
+            >
+              <i class="fa-solid fa-utensils">
+                <p>Menu</p>
+              </i>
+            </Link>
           </div>
         </div>
       </section>
@@ -66,7 +100,8 @@ const HomeTab = () => {
       >
         <h2>Welcome to the World of Pork</h2>
         <p>
-          We serve mouthwatering pork chops, ribs, sausages and more – prepared with love, spice, and tradition.
+          We serve mouthwatering pork chops, ribs, sausages and more – prepared
+          with love, spice, and tradition.
         </p>
       </motion.section>
 
@@ -81,9 +116,21 @@ const HomeTab = () => {
         <h3>Our Specials</h3>
         <div className="cards">
           {[
-            { img: PorkChop, title: 'Grilled Pork Chop', desc: 'Smoky, juicy and full of flavor!' },
-            { img: PorkRibs, title: 'BBQ Pork Ribs', desc: 'Slow-cooked and dripping in sauce.' },
-            { img: Sausage, title: 'Spicy Pork Sausage', desc: 'Perfectly seasoned & grilled.' },
+            {
+              img: PorkChop,
+              title: "Grilled Pork Chop",
+              desc: "Smoky, juicy and full of flavor!",
+            },
+            {
+              img: PorkRibs,
+              title: "BBQ Pork Ribs",
+              desc: "Slow-cooked and dripping in sauce.",
+            },
+            {
+              img: Sausage,
+              title: "Spicy Pork Sausage",
+              desc: "Perfectly seasoned & grilled.",
+            },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -95,8 +142,8 @@ const HomeTab = () => {
               viewport={{ once: true }}
             >
               <img src={item.img} alt={item.title} />
-              <h4>{item.title}</h4>
-              <p>{item.desc}</p>
+              <h4 className="mobile-card-title">{item.title}</h4>
+              <p className="mobile-card-desc">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -104,10 +151,12 @@ const HomeTab = () => {
 
       {/* Call to Action */}
       <section className="cta">
-        <h2>Craving Something Delicious?</h2>
-        <p>Don't miss out on our exclusive deals and special offers.</p>
+        <h2 className="mobile-cta-title">Craving Something Delicious?</h2>
+        <p className="mobile-cta-desc">
+          Don't miss out on our exclusive deals and special offers.
+        </p>
         <Link to="/menu">
-          <button className="cta-btn">Order Now</button>
+          <button className="mobile-cta-btn">Order Now</button>
         </Link>
       </section>
     </div>

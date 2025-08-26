@@ -5,6 +5,7 @@ import CartTab from "./CartTab";
 import Menu from "./MenuTab";
 import ContactTab from "./ContactTab";
 import { Route, Routes } from "react-router-dom";
+import AboutPage from "./AboutTab";
 
 function MobileApp() {
   return (
@@ -14,6 +15,7 @@ function MobileApp() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/cart" element={<CartTab />} />
         <Route path="/contact" element={<ContactTab />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <BottomNavBar />
     </div>

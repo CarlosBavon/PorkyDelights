@@ -1,25 +1,66 @@
 import React from "react";
 import "../mobileStyles/AboutTab.css";
-import Pig from "../assets/pig-chef.jpeg";
+import { Link } from "react-router-dom";
 
-const AboutTab = () => {
+const AboutPage = () => {
   return (
-    <div className="about-tab">
-      <h2>🐽 Who We Are</h2>
-      <p>
-        Welcome to <strong>Porky Delights</strong> — where every bite tells a story!
-        We’re not just a food brand. We’re a pork-powered movement. 🍖✨
-      </p>
-      <div className="pig-hero">
-        <img src={Pig} alt="Cute Piggy" />
-        <p><em>Born to serve flavor!</em></p>
-      </div>
-      <p>
-        Whether it's bacon, ribs, or the legendary pork chop, we bring it hot and fresh.
-        Our mobile-first approach ensures you can *snack and scroll* at the same time 😎📱
-      </p>
+    <div className="about-container">
+      <header className="about-header">
+        <h1>About Porky Delights</h1>
+        <p>Your ultimate guide to all things pork</p>
+      </header>
+
+      <main className="about-content">
+        <section className="about-section">
+          <h2>Our Story</h2>
+          <p>
+            Pork App was born from a passion for quality pork products and the
+            desire to share recipes, cooking techniques, and product information
+            with fellow pork enthusiasts.
+          </p>
+        </section>
+
+        <section className="about-section">
+          <h2>Features</h2>
+          <ul>
+            <li>Hundreds of pork recipes</li>
+            <li>Cooking temperature guide</li>
+            <li>Butcher cuts reference</li>
+            <li>Personal cooking timer</li>
+            <li>Weekly meal planner</li>
+          </ul>
+        </section>
+
+        <section className="about-section">
+          <h2>Meet Our Team</h2>
+          <div className="team-grid">
+            <div className="team-member">
+              <div className="member-image"></div>
+              <h3>Chef John</h3>
+              <p>Head of Recipes</p>
+            </div>
+            <div className="team-member">
+              <div className="member-image"></div>
+              <h3>Maria</h3>
+              <p>Product Expert</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="about-section">
+          <h2>Contact Us</h2>
+          <p>Have questions or suggestions? We'd love to hear from you!</p>
+          <Link to="/contact" className="contact-btn">
+            Send Message
+          </Link>
+        </section>
+      </main>
+
+      <footer className="about-footer">
+        <p>© 2025 Porky Delights. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
 
-export default AboutTab;
+export default AboutPage;

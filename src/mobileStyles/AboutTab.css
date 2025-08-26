@@ -1,27 +1,134 @@
-.about-tab {
-  padding: 2rem;
-  background: linear-gradient(to bottom right, #fff0f0, #ffe6e6);
-  font-family: 'Comic Neue', sans-serif;
-  color: #3d0000;
-  text-align: center;
+/* AboutPage.css */
+.about-container {
   min-height: 100vh;
+  background: linear-gradient(to bottom, #fff0f5, #fadadd);
+  color: #800020;
+  font-family: 'Arial', sans-serif;
+  padding: 0 20px;
 }
 
-.about-tab h2 {
-  font-size: 2.5rem;
-  color: #cc0000;
-  margin-bottom: 1rem;
+.about-header {
+  text-align: center;
+  padding: 30px 0 20px;
+  border-bottom: 2px solid #f8c8c6;
 }
 
-.pig-hero img {
-  width: 160px;
-  margin: 1rem auto;
-  display: block;
+.about-header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #800020;
+  text-shadow: 1px 1px 2px #ffb6c1;
+}
+
+.about-header p {
+  font-size: 1rem;
+  color: #a95c68;
+  margin: 10px 0 0;
+}
+
+.about-content {
+  padding: 20px 0;
+}
+
+.about-section {
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(139, 0, 0, 0.1);
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  color: #800020;
+  border-bottom: 2px solid #f8c8c6;
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+.about-section p {
+  line-height: 1.6;
+  color: #4a0001;
+}
+
+.about-section ul {
+  padding-left: 20px;
+}
+
+.about-section li {
+  margin-bottom: 8px;
+  color: #4a0001;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.team-member {
+  text-align: center;
+  flex-basis: 45%;
+}
+
+.member-image {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #f8c8c6;
+  margin: 0 auto 10px;
+  border: 2px solid #800020;
 }
 
-.pig-hero p {
-  font-style: italic;
+.team-member h3 {
+  margin: 5px 0;
   font-size: 1.1rem;
+  color: #800020;
+}
+
+.team-member p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #a95c68;
+}
+
+.contact-btn {
+  background-color: #800020;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: #600018;
+}
+
+.about-footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #a95c68;
+  font-size: 0.9rem;
+  border-top: 2px solid #f8c8c6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .team-member {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .about-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-section {
+    padding: 15px;
+  }
 }

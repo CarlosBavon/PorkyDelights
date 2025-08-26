@@ -17,7 +17,8 @@
 .mobile-menu-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.7rem;
+    align-items: center;
+    gap: 5px;
 }
 
 .mobile-menu-card {

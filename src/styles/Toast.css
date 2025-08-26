@@ -2,7 +2,6 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 9999;
   pointer-events: none;
 }
@@ -10,7 +9,7 @@
 .toast-box {
   background: #cc0000;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   padding: 16px 28px;
   border-radius: 16px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);

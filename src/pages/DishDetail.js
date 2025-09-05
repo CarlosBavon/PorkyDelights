@@ -74,11 +74,7 @@ const DishDetail = () => {
           </label>
         ))}
       </div>
-
-      <button className="order-btn" onClick={handleAddToCart}>
-        Order Now
-      </button>
-
+      
       <div className="dish-actions">
         <button className="fav-btn" onClick={handleAddToFavorites}>
           ❤️ Add to Favs

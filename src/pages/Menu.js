@@ -15,6 +15,8 @@ import BabyBackRibs from "../images/baby-black-ribs.jpeg";
 import PorkHock from "../images/pock-hock.jpeg";
 import PorkJowl from "../images/pork-jowl.jpeg";
 import PorkTrotters from "../images/pork-trotters.jpeg";
+import Sirloin from "../images/Sirloin.jpeg";
+import PorkButt from "../images/PorkButt.jpeg";
 
 import Bacon from "../images/bacon.jpeg";
 import Ham from "../images/ham.jpeg";
@@ -26,6 +28,8 @@ import HotDog from "../images/hotdog.jpeg";
 import BaconBits from "../images/bacon-bits.jpeg";
 import SausageBits from "../images/sausage-bits.jpeg";
 import Pepperoni from "../images/pepperoni.jpeg";
+import Pancetta from "../images/Pancetta.jpeg";
+import SerranoHam from "../images/SerranoHam.jpeg";
 
 import PulledPork from "../images/pulled-pork.jpeg";
 import Carnitas from "../images/carnitas.jpeg";
@@ -37,6 +41,8 @@ import PorkRinds from "../images/pork-rinds.jpeg";
 import Cassoulet from "../images/cassoulet.jpeg";
 import Feijoada from "../images/feijoada.jpeg";
 import Sisig from "../images/sisig.jpeg";
+import TwiceCookedPork from "../images/TwiceCookedPork.jpeg";
+import MooPing from "../images/MooPing.jpeg";
 
 const freshporkcuts = [
   {
@@ -98,6 +104,18 @@ const freshporkcuts = [
     price: 350,
     image: PorkTrotters,
     description: "Flavorful pork trotters, a hearty option.",
+  },
+  {
+    name: "Sirloin Chop",
+    price: 1500,
+    image: Sirloin,
+    description: "Juicy sirloin chop, a premium pork cut.",
+  },
+  {
+    name: "Pork Butt",
+    price: 800,
+    image: PorkButt,
+    description: "Rich and flavorful pork butt, perfect for slow cooking.",
   },
 ];
 
@@ -162,6 +180,18 @@ const processedPork = [
     image: Pepperoni,
     description: "Juicy, pepperoni seasoned to perfection.",
   },
+  {
+    name: "Pancetta (per 100g)",
+    price: 500,
+    image: Pancetta,
+    description: "Italian cured pork belly, similar to bacon.",
+  },
+  {
+    name: "Serrano Ham (per 100g)",
+    price: 800,
+    image: SerranoHam,
+    description: "Spanish dry-cured ham, rich and savory.",
+  }
 ];
 
 const internationalPork = [
@@ -224,6 +254,18 @@ const internationalPork = [
     price: 900,
     image: Sisig,
     description: "Filipino stew with pork, vegetables, and spices.",
+  },
+  {
+    name: "Twice Cooked Pork",
+    price: 1400,
+    image: TwiceCookedPork,
+    description: "Chinese dish with pork belly, vegetables, and spices.",
+  },
+  {
+    name: "Moo Ping",
+    price: 800,
+    image: MooPing,
+    description: "Thai grilled pork skewers, marinated and flavorful.",
   },
 ];
 

@@ -19,7 +19,6 @@ const CheckoutPage = () => {
     cardName: "",
     cardExpiry: "",
     cardCVV: "",
-    paypalEmail: "",
   });
   const [loading, setLoading] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState("");
@@ -279,15 +278,6 @@ const CheckoutPage = () => {
                 />
               </div>
               <div className="payment-option">
-                <p>PayPal</p>
-                <input
-                  type="radio"
-                  name="payment"
-                  value="PayPal"
-                  onChange={(e) => setPayment(e.target.value)}
-                />
-              </div>
-              <div className="payment-option">
                 <p>Cash on Delivery</p>
                 <input
                   type="radio"
@@ -349,20 +339,6 @@ const CheckoutPage = () => {
                   value={formData.cardCVV}
                   onChange={(e) =>
                     setFormData({ ...formData, cardCVV: e.target.value })
-                  }
-                />
-              </div>
-            )}
-
-            {payment === "PayPal" && (
-              <div className="payment-details">
-                <label>PayPal Email:</label>
-                <input
-                  type="email"
-                  placeholder="you@example.com"
-                  value={formData.paypalEmail}
-                  onChange={(e) =>
-                    setFormData({ ...formData, paypalEmail: e.target.value })
                   }
                 />
               </div>

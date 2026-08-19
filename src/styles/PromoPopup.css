@@ -1,203 +1,225 @@
 .popup-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .popup-container {
-    background: radial-gradient(circle at center, #0f8b8d, #004d4d);
-    background-size: cover;
-    padding: 30px;
-    max-width: 60%;
-    width: 90%;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.5s ease-in-out;
-    border: 5px solid white;
+  background: radial-gradient(circle at center, #0f8b8d, #004d4d);
+  background-size: cover;
+  padding: 30px;
+  max-width: 60%;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+  border: 5px solid white;
 }
 
 .popup-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: transparent;
-    border: none;
-    font-size: 20px;
-    cursor: url(../pointer.png), pointer;
-    color: white;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: url(../pointer.png), pointer;
+  color: white;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .popup-nav {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .popup-logo {
-    text-align: left;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    align-items: center;
+  text-align: left;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
 }
 .popup-logo img {
-    height: 50px;
+  height: 50px;
 }
 
 .popup-social-links {
-    align-items: center;
-    display: flex;
-    cursor: url(../pointer.png), pointer;
+  align-items: center;
+  display: flex;
+  cursor: url(../pointer.png), pointer;
 }
 .popup-social-links a {
-    text-decoration: none;
-    cursor: url(../pointer.png), pointer;
+  text-decoration: none;
+  cursor: url(../pointer.png), pointer;
 }
 .popup-social-links i {
-    text-decoration: none;
-    margin-left: 10px;
-    padding: 7px;
-    border-radius: 50%;
-    background-color: wheat;
-    color: rgb(22, 27, 14);
-    height: 20px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: url(../pointer.png), pointer;
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: wheat;
+  color: rgb(22, 27, 14);
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: url(../pointer.png), pointer;
 }
 
 .popup-header {
-    margin-top: -60px;
-    position: relative;
-    background-image: url('../assets/brush.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60%;
+  margin-top: -60px;
+  position: relative;
+  background-image: url("../assets/brush.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
 }
 
-
 .special {
-    font-family: "Great Vibes", cursive;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 4rem;
-    margin-bottom: -110px;
-    color: white;
+  font-family: "Great Vibes", cursive;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 4rem;
+  margin-bottom: -110px;
+  color: white;
 }
 
 .samosa {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 900;
-    color: wheat;
-    font-style: normal;
-    font-size: 5.5rem;
-    margin-bottom: -50px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 900;
+  color: wheat;
+  font-style: normal;
+  font-size: 5.5rem;
+  margin-bottom: -50px;
 }
 
 .weekend {
-    color: white;
+  color: white;
 }
 
 .popup-image img {
-    margin-top: -80px;
+  margin-top: -80px;
 }
 
 .popup-image p {
-    position: absolute;
-    left: 65%;
-    top: 32%;
-    font-size: 2rem;
-    border-radius: 50%;
-    background-image: url(../assets/circlebrush.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 150px;
-    line-height: 0.5;
-    padding: 10px;
-    padding-top: 50px;
-    padding-bottom: 40px;
-    padding-left: 30px;
-    padding-right: 30px;
+  position: absolute;
+  left: 65%;
+  top: 32%;
+  font-size: 2rem;
+  border-radius: 50%;
+  background-image: url(../assets/circlebrush.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 150px;
+  line-height: 0.5;
+  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .seventy {
-    color: wheat;
-    font-weight: 900;
+  color: wheat;
+  font-weight: 900;
 }
 
 .off {
-    color: white;
-    font-size: 1rem;
+  color: white;
+  font-size: 1rem;
 }
 
 .popup-footer {
-    margin-top: -140px;
-    display: flex;
-    justify-content: space-between;
+  margin-top: -140px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .popup-order-button {
-    text-align: left;
-    color: white;
+  text-align: left;
+  color: white;
 }
 
 .popup-button {
-    text-decoration: none;
-    color: rgb(22, 27, 14);
-    border-radius: 10px;
-    background-color: wheat;
-    padding: 10px 30px;
-    font-weight: bold;
-    cursor: url(../pointer.png), pointer;
+  text-decoration: none;
+  color: rgb(22, 27, 14);
+  border-radius: 10px;
+  background-color: wheat;
+  padding: 10px 30px;
+  font-weight: bold;
+  cursor: url(../pointer.png), pointer;
 }
 
 .popup-contact {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .popup-contact-content p {
-    color: wheat;
+  color: wheat;
 }
 .popup-contact-content {
-    color: white;
-    line-height: 5px;
+  color: white;
+  line-height: 5px;
 }
 
 .popup-contact-icon {
-    font-size: 2rem;
-    color: rgb(22, 27, 14);
-    border-radius: 50%;
-    padding: 10px;
-    margin-left: 10px;
-    height: 40px;
-    width: 40px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    background-color: wheat;
+  font-size: 2rem;
+  color: rgb(22, 27, 14);
+  border-radius: 50%;
+  padding: 10px;
+  margin-left: 10px;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: wheat;
+}
+
+.popup-backdrop.closing .popup-container {
+  animation: fadeOut 0.25s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.popup-countdown {
+  margin-top: 15px;
+  color: wheat;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
 }

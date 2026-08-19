@@ -1,59 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
 .newsletter {
+  --maroon: #b22222;
+  --maroon-dark: #8b1a1a;
+  --cream: #fdf5e6;
+  --brown: #3e1f1f;
+  --pink-light: #fff0f0;
+
   text-align: center;
-  padding: 40px 20px;
-  background-color: #fff0f0;
-  border-radius: 18px;
-  margin: 40px 20px;
-  color: #cc0000;
-  font-family: "Segoe UI", sans-serif;
+  padding: 3.5rem 1.5rem;
+  background-color: var(--pink-light);
+  border-radius: 20px;
+  margin: 2.5rem 1.25rem;
+  color: var(--brown);
+  font-family: "Poppins", sans-serif;
+}
+
+.newsletter-tag {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  padding: 0.3rem 0.9rem;
+  border: 2px dashed var(--maroon);
+  border-radius: 999px;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--maroon);
 }
 
 .newsletter h2 {
-  margin-bottom: 10px;
-  font-size: 1.7rem;
+  margin: 0 0 0.6rem;
+  font-family: "Archivo Black", "Poppins", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--maroon);
 }
 
 .newsletter p {
-  margin-bottom: 20px;
-  font-size: 1rem;
+  margin: 0 auto 1.75rem;
+  max-width: 420px;
+  font-size: 0.95rem;
+  opacity: 0.85;
 }
 
 .newsletter form {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: stretch;
+  justify-content: center;
 }
 
 .newsletter input {
-  padding: 12px 16px;
+  padding: 0.8rem 1rem;
   border-radius: 12px;
-  border: 1px solid #ccc;
+  border: 1.5px solid rgba(178, 34, 34, 0.25);
+  background-color: var(--white, #fff);
   width: 100%;
-  max-width: 300px;
-  font-size: 1rem;
+  max-width: 280px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  color: var(--brown);
   cursor: url(../typing.png), pointer;
+  transition: border-color 0.2s ease;
+}
+
+.newsletter input:focus-visible {
+  outline: none;
+  border-color: var(--maroon);
+  box-shadow: 0 0 0 3px rgba(178, 34, 34, 0.15);
 }
 
 .newsletter button {
-  background-color: #cc0000;
-  color: white;
+  background-color: var(--maroon);
+  color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 0.8rem 1.5rem;
   border-radius: 12px;
-  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: url(../pointer.png), pointer;
-  transition: background 0.3s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease;
 }
 
 .newsletter button:hover {
-  background-color: #a00000;
+  background-color: var(--maroon-dark);
+  transform: translateY(-2px);
+}
+
+.newsletter button:focus-visible {
+  outline: 3px solid var(--maroon-dark);
+  outline-offset: 3px;
 }
 
 .newsletter-toast {
-  margin-top: 20px;
-  background: #ffdada;
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-weight: bold;
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.7rem 1.5rem;
+  border-top: 2px dashed rgba(178, 34, 34, 0.4);
+  padding-top: 1rem;
+  font-weight: 600;
+  color: var(--maroon-dark);
+  animation: toast-in 0.3s ease;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newsletter-toast {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+    max-width: 300px;
+  }
 }
